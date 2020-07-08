@@ -5,14 +5,19 @@ body {
 
 .welcome-text{
     color: rebeccapurple;
-    background-color: sienna;
-    background-blend-mode:;
+    background-blend-mode;
     position: absolute;
     top: 10%;
+    left: 35%;
+    font-family: "Lato", sans-serif;
+}
+
+.category-search{
+    color: blue;
+    position: absolute;
+    top: 25%;
     left: 40%;
     font-family: "Lato", sans-serif;
-
-
 }
 
 .container {
@@ -74,3 +79,63 @@ body {
 .nav-link-wrapper a:hover {
     color: black;
 }
+
+.biz-categories {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;  /*this way we divide the page into three sections adn put our items in those columns*/
+}
+
+.biz-category{
+    position: relative; /*required! to later use the absolute position*/
+}
+
+.img-background {
+    position: relative;
+    top:40%;
+    height: 300px;
+    width: 100%;
+    background-size: cover; /*crops the picture so they appear as the same on the page*/
+    background-position: center;
+    background-repeat: no-repeat;
+
+
+}
+/*working with the text*/
+.img-text-wrapper {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.logo-wrapper img{
+
+    width: 50%;
+    margin-bottom: 20px;
+
+}
+
+.img-text-wrapper .subtitle{
+    transition: 1s;
+    font-weight: 600;
+    color: transparent;
+}
+
+/*needs to be more specific with selector/hover*/
+.img-text-wrapper:hover .subtitle {
+    font-weight: 600;
+    color: lightseagreen;
+
+ }
+
+
+ .img-darken {
+    transition: 1s;
+    filter: brightness(10%);
+ }

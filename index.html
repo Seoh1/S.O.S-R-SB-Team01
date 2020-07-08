@@ -34,11 +34,155 @@
             <div class="welcome-text">
                 <h1>Welcome to Team universal</h1>
             </div>
+            <div class="category-search">
+                <p1>What are you looking for?</p1>
+            </div>
+        
         
 
 
 
 
         </div>
+
+        <div class="content-wrapper">
+            <div class="biz-categories">
+
+
+                <div class="biz-category">
+                    <div class = "img-background" style = "background-image:url(img_universal/restaurant.jpg)">
+                    </div>
+
+                    <div class="img-text-wrapper">
+                        <div class="centered">
+                            <h1>Restaurants/Food</h1>
+                        
+                        </div>
+
+                        <div class="subtitle">
+                            Order, buy & eat out at local small restaurants
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="biz-category">
+                    <div class = "img-background" style = "background-image:url(img_universal/florist.jpg)">
+                    </div>
+
+                    <div class="img-text-wrapper">
+                        <div class="centered">
+                            <h1>Florist shops</h1>
+                        
+                        </div>
+
+                        <div class="subtitle">
+                            Buy your loved ones a beautiful bouquet 
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="biz-category">
+                    <div class = "img-background" style = "background-image:url(img_universal/coffee.jpg)">
+                    </div>
+
+                    <div class="img-text-wrapper">
+                        <div class="centered">
+                            <h1>Coffee shops & more</h1>
+                        
+                        </div>
+
+                        <div class="subtitle">
+                            Enjoy Indy coffee brewed and sold by locals 
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="biz-category">
+                    <div class = "img-background" style = "background-image:url(img_universal/boutique.jpg)">
+                    </div>
+
+                    <div class="img-text-wrapper">
+                        <div class="centered">
+                            <h1>Boutiques & Clothing Stores</h1>
+                        
+                        </div>
+
+                        <div class="subtitle">
+                            Shop from locally owned boutiques
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                
+                <div class="biz-category">
+                    <div class = "img-background" style = "background-image:url(img_universal/barber.jpg)">
+                    </div>
+
+                    <div class="img-text-wrapper">
+                        <div class="centered">
+                            <h1>Barber shops</h1>
+                        
+                        </div>
+
+                        <div class="subtitle">
+                            Give yourself a fresh look at the barber shop
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <div class="biz-category">
+                    <div class = "img-background" style = "background-image:url(img_universal/bike_shop.jpg)">
+                    </div>
+
+                    <div class="img-text-wrapper">
+                        <div class="centered">
+                            <h1>Bicycle shops & more</h1>
+                        
+                        </div>
+
+                        <div class="subtitle">
+                            Buy or repair your bike here!
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
     </body>
+
+    <script>
+    const bizItems = document.querySelectorAll('.biz-category')
+
+    bizItems.forEach(bizItem => {
+        bizItem.addEventListener('mouseover', () => {
+            bizItem.childNodes[1].classList.add('img-darken');
+
+        })
+        bizItem.addEventListener('mouseout', () => {
+            bizItem.childNodes[1].classList.remove('img-darken');
+
+        })
+    })
+
+
+</script>
+
 </html>
