@@ -1,6 +1,16 @@
 body {
     font-family: "Lato", sans-serif;
     margin: 0px;
+}
+
+.welcome-text{
+    color: rebeccapurple;
+    background-color: sienna;
+    background-blend-mode:;
+    position: absolute;
+    top: 10%;
+    left: 40%;
+    font-family: "Lato", sans-serif;
 
 
 }
@@ -18,5 +28,49 @@ body {
     color: white;
     font-family: "Lato", sans-serif;
   }
+  .nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 38px;
+}
 
-  
+.left-side {
+    display: flex;
+
+
+}
+
+  .nav-wrapper > .left-side > div {
+    margin-right: 20px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+
+
+}
+.nav-wrapper > .right-side > div {
+    margin-right: 20px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+
+
+}
+
+.nav-link-wrapper {
+    height: 22px;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.5s;
+}
+
+.nav-link-wrapper a {
+    color: #8a8a8a;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+.nav-link-wrapper:hover {
+    border-bottom: 1px solid black;
+}
+
+.nav-link-wrapper a:hover {
+    color: black;
+}
