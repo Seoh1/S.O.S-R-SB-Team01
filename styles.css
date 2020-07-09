@@ -80,6 +80,25 @@ body {
     color: black;
 }
 
+/*the style for business category links*/
+.biz-link-wrapper{
+    height: 22px;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.5s;
+
+}
+
+.biz-link-wrapper a{
+    color: whitesmoke;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+
+.biz-link-wrapper a:hover{
+    color: purple;
+}
+
 .biz-categories {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;  /*this way we divide the page into three sections adn put our items in those columns*/
