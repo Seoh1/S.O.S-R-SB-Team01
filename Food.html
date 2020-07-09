@@ -5,7 +5,9 @@
     <title>About</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-</head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+		
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script></head>
 
 <body>
     <div class="container">
@@ -30,7 +32,73 @@
 
 
     </div>
+    <!-- this is a START of a trial-->
+    <section class="section">
+        <div class="container">
+            <h1 class="title">
+                Hello World
+            </h1>
+            
+            <p class="subtitle">
+                My first website with <strong>Bulma</strong>!
+            </p>
+            
+            <!-- The vue application, html and vue logic will be in here: https://vuejs.org/v2/guide/ -->
+            <div id="app">
+                
+                <p>The message in the vue app is: {{ message }}</p>
+                
+                <!-- output html for each object in items -->
+                <div class="item" v-for="item in items">
+                    <ul>
+                        <li>
+                            <!-- use link in JSON for href value -->
+                            <a v-bind:href="item.link">{{ item.name }}</a>	
+                        </li>
+                        <li>{{ item.city }}</li>
+                        <li>{{ item.type }}</li>
+                        <li>{{ item.menu }}</li>
+                        <li>{{ item.hours }}</li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+    </section>
 
+<!-- END OF TRIAL-->
 
 </body>
+
+
+<script>
+			var app = new Vue({
+				el: '#app',
+				data: {
+					message: 'Hello Vue!',
+					items: [
+						{
+							name: "The Tamale Place",
+                            city: "Indianapolis",
+                            type: "Mexican",
+                            menu: "https://www.thetamaleplace.com/city-market-menu",
+                            hours: "M-F(10am-2pm); Sat and Sun closed"
+						},
+                        {
+                            name: "Gomez BBQ",
+                            city: "Indianapolis",
+                            type: "",
+                            menu: "http://www.gomezbbq.com/market-delivery?category=Gomez%20BBQ"
+                },
+                {
+                            name: "Spice Box",
+                            city: "Indianapolis",
+                            type: "Indian & Middle Eastern",
+                            menu: "http://spiceboxindy.com/spice-box-menu/"
+                }
+						
+					]
+				}
+			});
+</script>
 </html>
