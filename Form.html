@@ -6,14 +6,53 @@
     <title>Input Form</title>
 </head>
 <body>
-    <form>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js"></script>
+    
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
+    
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBRmNBPErjiQzclhKDNHC4DJ-NNTdZD6GU",
+            authDomain: "team-universal-database.firebaseapp.com",
+            databaseURL: "https://team-universal-database.firebaseio.com",
+            projectId: "team-universal-database",
+            storageBucket: "team-universal-database.appspot.com",
+            messagingSenderId: "359143047818",
+            appId: "1:359143047818:web:0db611886ddacafd6ba373",
+            measurementId: "G-LJZVEVE4BC"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+
+        function writeData() {
+            firebase.database().ref("Business").push({
+        
+               Name: document.getElementById("Biz Name").value,
+               Address: document.getElementById("L1").value + " " + document.getElementById("L2").value,
+               Email: document.getElementById("biz email").value,
+               Number: document.getElementById("biz nums").value,
+               Business_Type: document.getElementById("Biz Type").value
+
+             
+                
+            });
+        }
+    </script>
+
+    <form id = "Biz form">
         <div>
             <label for = "Biz Name"> Business Name</label> <!-- label for refers to an input id, specified in input. This is to highlight the corresponding textbox-->
-            <input type = "text" name = "Business Name" id = 'Biz Name' placeholder="Business Name" required>
+            <input type = "text" name = "Business Name" id = "Biz Name" placeholder="Business Name" required>
         </div>
         <div>
             <label for = "L1"> Address Line 1 </label>
-            <input name = "Address Line 1" id = 'L1' placeholder="Busniess Address Line 1" required>
+            <input name = "Address Line 1" id = "L1" placeholder="Busniess Address Line 1" required>
         </div>
         <div>
             <label for = "L2"> Address Line 2 (optional) </label>
@@ -30,8 +69,8 @@
         </div>
         <div>
             <label> Business Type 
-                <select>
-                <option value = "Food"> Resturant</option>
+                <select id = "Biz Type">
+                <option value = "Resturant"> Resturant</option>
                 <option value = "Barber"> Barber</option>
                 <option value = "Bike"> Bike </option>
                 <option value = "Boutique"> Boutique </option>
@@ -41,7 +80,28 @@
                 </select>
             </label>
         </div>
-        <button type = "submit"> Submit </button>
+        <div>
+            <h1>
+                Please check your business status
+            </h1>
+            <div>
+                <label for = "mask"> Require Mask </label>
+                <input type = "checkbox" name = "Mask" id = "mask">
+            </div>
+            <div>
+                <label for = "delivery"> Delivery </label>
+                <input type = "checkbox" name = "Delivery" id = "delivery" >
+            </div>
+            <div>
+                <label for = "take out"> Take Out </label>
+                <select>
+                    <option value = "Crubside"> Curbside pick up </option>
+                    <option value = "Pickup"> Returant pick up</option>
+                </select>
+            </div>
+        </div>
+        <button type = "reset"> Reset </button>
+        <button onclick= "writeData()"> Submit </button>
     </form>
 </body>
 </html>
