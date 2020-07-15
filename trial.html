@@ -6,6 +6,8 @@
     <title>Input Form</title>
 </head>
 <body>
+  
+
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js"></script>
@@ -13,7 +15,12 @@
     <!-- TODO: Add SDKs for Firebase products that you want to use
          https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
-    
+  
+     <p> 
+        <ol id="Business list">
+            
+        </ol>
+    </p>  
     <script>
         // Your web app's Firebase configuration
         var firebaseConfig = {
@@ -26,9 +33,43 @@
             appId: "1:359143047818:web:0db611886ddacafd6ba373",
             measurementId: "G-LJZVEVE4BC"
         };
+
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
+        database = firebase.database();
+
+        //eliza's added parts- retrieving data from the firebase
+
+
+        var ref = database.ref("Business");
+        ref.on("value", gotData, errData);
+
+       
+        function gotData(data) {
+            var businesses = data.val();
+            var keys = Object.keys(businesses);
+
+            for (var i =0; i < keys.length; i++){
+                var k = keys[i];
+                var name = businesses[k].Name;
+                var email = businesses[k].Email;
+                var number = businesses[k].Number;
+                var li = createElement('li', name + ':' + email + number);
+                li.parent("Business list");
+            }
+
+            }
+
+        function errData(err){
+            console.log("error!");
+            console.log(err);
+        }
+
+
+
+
+        // end of added stuff from ELIZA
         
 
         function writeData() {
