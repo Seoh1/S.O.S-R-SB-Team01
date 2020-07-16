@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Input Form</title>
+
+
 </head>
+
+<script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+
 <body>
   
 
@@ -15,7 +23,13 @@
     <!-- TODO: Add SDKs for Firebase products that you want to use
          https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
-  
+        <!-- this is added by Eliza for the jQuery-->
+        <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
+
+    
+
+    
      <p> 
         <ol id="Business list">
             
@@ -42,32 +56,75 @@
         //eliza's added parts- retrieving data from the firebase
 
 
-        var ref = database.ref("Business");
-        ref.on("value", gotData, errData);
+        // var ref = database.ref("Business");
+        // ref.on("value", gotData, errData);
+
+        var ref= database.ref("Business").orderByKey();
+        var submitResults = function(){
+            var name_val = $("#name").val();
+            var email_val  = $("#email").val();
+            var number_val = $("#number").val();
+
+            ref.push({
+                "name": name_val,
+                "email" :email_val,
+                "number": number_val
+
+
+            })
+        };
+        ref.limitToLast(1).on('child_added',function(childSnapshot){
+            ref = childSnapshot.val();
+            $("#name").html(ref.name_val)
+            $("#email").html(ref.email_val)
+            $("#number").html(ref.number_val)
+
+            $("#link").attr("href, ref.link")
+
+
+
+
+        });
+
+        $(window).load(function(){
+            $("#Biz form").submit(submitResults);
+        })
+
+
+
+
+        // ref.on("value",gotData, errData);
 
        
-        function gotData(data) {
-            var businesses = data.val();
-            var keys = Object.keys(businesses);
+        // function gotData(data) {
+        //     var businesses = data.val();
+        //     var keys = Object.keys(businesses);
 
-            for (var i =0; i < keys.length; i++){
-                var k = keys[i];
-                var name = businesses[k].Name;
-                var email = businesses[k].Email;
-                var number = businesses[k].Number;
-                var li = createElement('li', name + ':' + email + number);
-                li.parent("Business list");
-            }
+        //     for (var i =0; i < keys.length; i++){
+        //         var k = keys[i];
+        //         var name_val = businesses[k].Name;
+        //         var email_val = businesses[k].Email;
+        //         var number_val= businesses[k].Number;
 
-            }
+        //         $("#name").append(name_val);
+        //         $("#email").append(email_val);
+        //         $("#number_val").append(number_val);
 
-        function errData(err){
-            console.log("error!");
-            console.log(err);
-        }
+        //         $("#name").append("<p" + name_val + "</p><p> " + email_val + "</p><p> " + number_val + "</p<br>");
 
 
+               
+        //     }
 
+        //     }
+
+        // function errData(err){
+        //     console.log("error!");
+        //     console.log(err);
+        // }
+
+
+        
 
         // end of added stuff from ELIZA
         
