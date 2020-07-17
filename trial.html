@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Input Form</title>
 
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
 
 </head>
 
@@ -35,6 +38,25 @@
             
         </ol>
     </p>  
+
+    <div id="app">
+        <h1>Businesses</h1>
+        <div class="business" v-for="business in businesses">
+            <ul>
+                <li>Address: {{ business.Address }}</li>
+                <li>Business Type: {{ business.Business_Type }}</li>
+                <li>Email: {{ business.Email }}</li>
+                <li>Name: {{ business.Name }}</li>
+                <li>Number: {{ business.Number }}</li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+
     <script>
         // Your web app's Firebase configuration
         var firebaseConfig = {
@@ -47,7 +69,8 @@
             appId: "1:359143047818:web:0db611886ddacafd6ba373",
             measurementId: "G-LJZVEVE4BC"
         };
-
+        </script>
+    <script> 
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
@@ -55,73 +78,32 @@
 
         //eliza's added parts- retrieving data from the firebase
 
-
-        // var ref = database.ref("Business");
-        // ref.on("value", gotData, errData);
-
         var ref= database.ref("Business").orderByKey();
-        var submitResults = function(){
-            var name_val = $("#name").val();
-            var email_val  = $("#email").val();
-            var number_val = $("#number").val();
 
-            ref.push({
-                "name": name_val,
-                "email" :email_val,
-                "number": number_val
+        ref.on("value",gotData, errData);
 
+        function gotData(data) {
+        var businesses = data.val();
+        // set the businesses data in vue
+        app._data.businesses = businesses;
+        var keys = Object.keys(businesses);
+         for(var i=0; i= keys.length; i++){
+            var k = keys[i];
+            var name_val = businesses[k].Name;
+            var email_val = businesses[k].Email;
+            var number_val= businesses[k].Number;
+         }
+         console.log(data)
 
-            })
-        };
-        ref.limitToLast(1).on('child_added',function(childSnapshot){
-            ref = childSnapshot.val();
-            $("#name").html(ref.name_val)
-            $("#email").html(ref.email_val)
-            $("#number").html(ref.number_val)
+        
+         }  
+         function errData(err){
+            console.log("error!");
+            console.log(err);
+        }
+        
 
-            $("#link").attr("href, ref.link")
-
-
-
-
-        });
-
-        $(window).load(function(){
-            $("#Biz form").submit(submitResults);
-        })
-
-
-
-
-        // ref.on("value",gotData, errData);
-
-       
-        // function gotData(data) {
-        //     var businesses = data.val();
-        //     var keys = Object.keys(businesses);
-
-        //     for (var i =0; i < keys.length; i++){
-        //         var k = keys[i];
-        //         var name_val = businesses[k].Name;
-        //         var email_val = businesses[k].Email;
-        //         var number_val= businesses[k].Number;
-
-        //         $("#name").append(name_val);
-        //         $("#email").append(email_val);
-        //         $("#number_val").append(number_val);
-
-        //         $("#name").append("<p" + name_val + "</p><p> " + email_val + "</p><p> " + number_val + "</p<br>");
-
-
-               
-        //     }
-
-        //     }
-
-        // function errData(err){
-        //     console.log("error!");
-        //     console.log(err);
-        // }
+         <!-- initialize vue application into id="app" -->
 
 
         
@@ -202,5 +184,14 @@
         <button type = "reset"> Reset </button>
         <button onclick= "writeData()"> Submit </button>
     </form>
+
+    <script>
+        var app = new Vue({
+           el: '#app',
+           data: {
+       businesses: {}
+     }
+       });
+   </script>
 </body>
 </html>
