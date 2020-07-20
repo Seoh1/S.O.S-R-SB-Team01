@@ -43,14 +43,16 @@
         <h1>Businesses</h1>
         <div class="business" v-for="business in businesses">
             <ul>
-                <li>Address: {{ business.Address }}</li>
                 <li>Business Type: {{ business.Business_Type }}</li>
+                <li>Address: {{ business.Address }}</li>
                 <li>Email: {{ business.Email }}</li>
                 <li>Name: {{ business.Name }}</li>
                 <li>Number: {{ business.Number }}</li>
             </ul>
         </div>
     </div>
+
+    
 
 
 
@@ -94,6 +96,7 @@
             console.log("error!");
             console.log(err);
         }
+
         
 
         
@@ -115,7 +118,7 @@
             });
         }
     </script>
-    
+
     <form id = "Biz form">
         <div>
             <label for = "Biz Name"> Business Name</label> <!-- label for refers to an input id, specified in input. This is to highlight the corresponding textbox-->
@@ -171,11 +174,8 @@
                 </select>
             </div>
         </div>
-        <div class="botton-click">
         <button type = "reset"> Reset </button>
-    </div>
         <button onclick= "writeData()"> Submit </button>
-    
     </form>
 
     <script>

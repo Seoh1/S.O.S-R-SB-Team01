@@ -264,3 +264,21 @@ body {
     right: 15%;
 }
   /*end of the messafe pop up form*/
+
+
+
+/* START of styles for the form*/
+.button_click {
+        background-color: purple;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom:10px;
+        opacity: 0.8;
+      
+}
+
+
+/* END of the styles for the form*/
