@@ -89,81 +89,10 @@
 
 
         // end of added stuff from ELIZA
-        
 
-        function writeData() {
-            firebase.database().ref("Business").push({
-               
-               Name: document.getElementById("Biz Name").value,
-               Address: document.getElementById("L1").value + " " + document.getElementById("L2").value,
-               Email: document.getElementById("biz email").value,
-               Number: document.getElementById("biz nums").value,
-               Business_Type: document.getElementById("Biz Type").value
-
-             
-                
-            });
-        }
     </script>
 
-    <form id = "Biz form">
-        <div>
-            <label for = "Biz Name"> Business Name</label> <!-- label for refers to an input id, specified in input. This is to highlight the corresponding textbox-->
-            <input type = "text" name = "Business Name" id = "Biz Name" placeholder="Business Name" required>
-        </div>
-        <div>
-            <label for = "L1"> Address Line 1 </label>
-            <input name = "Address Line 1" id = "L1" placeholder="Busniess Address Line 1" required>
-        </div>
-        <div>
-            <label for = "L2"> Address Line 2 (optional) </label>
-            <input name = "Address Line 2" id = "L2" placeholder="Business Address Line 2">
-        </div>
-        <div>
-            <label for = "biz email"> Email </label>
-            <input type = "email" name = "Business Email" id = "biz email" required>
-    
-        </div>
-        <div>
-            <label for = "biz nums"> Business Number</label>
-            <input type = "number" name = "Business Number" id = "biz nums" required>
-        </div>
-        <div>
-            <label> Business Type 
-                <select id = "Biz Type">
-                <option value = "Resturant"> Resturant</option>
-                <option value = "Barber"> Barber</option>
-                <option value = "Bike"> Bike </option>
-                <option value = "Boutique"> Boutique </option>
-                <option value = "Coffee"> Coffee </option>
-                <option value = "Florist"> Florist</option>
 
-                </select>
-            </label>
-        </div>
-        <div>
-            <h1>
-                Please check your business status
-            </h1>
-            <div>
-                <label for = "mask"> Require Mask </label>
-                <input type = "checkbox" name = "Mask" id = "mask">
-            </div>
-            <div>
-                <label for = "delivery"> Delivery </label>
-                <input type = "checkbox" name = "Delivery" id = "delivery" >
-            </div>
-            <div>
-                <label for = "take out"> Take Out </label>
-                <select>
-                    <option value = "Crubside"> Curbside pick up </option>
-                    <option value = "Pickup"> Returant pick up</option>
-                </select>
-            </div>
-        </div>
-        <button type = "reset"> Reset </button>
-        <button onclick= "writeData()"> Submit </button>
-    </form>
     <!-- initialize vue application into id="app" -->
     <script>
         var app = new Vue({
