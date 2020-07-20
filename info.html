@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Form</title>
+    <!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    
+    <!--Casey's help with vue-->
+        <div id="app">
+    <h1>Businesses</h1>
+    <div class="business" v-for="business in businesses">
+        <ul>
+            <li>Address: {{ business.Address }}</li>
+            <li>Business Type: {{ business.Business_Type }}</li>
+            <li>Email: {{ business.Email }}</li>
+            <li>Name: {{ business.Name }}</li>
+            <li>Number: {{ business.Number }}</li>
+        </ul>
+    </div>
+    </div>
+  
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js"></script>
+    
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
+  
+     <p> 
+        <ol id="Business list">
+            
+        </ol>
+    </p>  
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBRmNBPErjiQzclhKDNHC4DJ-NNTdZD6GU",
+            authDomain: "team-universal-database.firebaseapp.com",
+            databaseURL: "https://team-universal-database.firebaseio.com",
+            projectId: "team-universal-database",
+            storageBucket: "team-universal-database.appspot.com",
+            messagingSenderId: "359143047818",
+            appId: "1:359143047818:web:0db611886ddacafd6ba373",
+            measurementId: "G-LJZVEVE4BC"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        database = firebase.database();
+
+
+        //eliza's added parts- retrieving data from the firebase
+
+
+        var ref = database.ref("Business");
+        ref.on("value", gotData, errData);
+
+       
+        function gotData(data) {
+            var businesses = data.val();
+            app._data.businesses = businesses;
+            console.log(businesses);
+            var keys = Object.keys(businesses);
+
+            for (var i =0; i < keys.length; i++){
+                var k = keys[i];
+                var name = businesses[k].Name;
+                var email = businesses[k].Email;
+                var number = businesses[k].Number;
+               // var li = createElement('li', name + ':' + email + number);
+               // li.parent("Business list");
+            }
+
+            }
+
+        function errData(err){
+            console.log("error!");
+            console.log(err);
+        }
+
+
+
+
+        // end of added stuff from ELIZA
+
+    </script>
+
+
+    <!-- initialize vue application into id="app" -->
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                businesses: {}
+            }
+        });
+    </script>
+</body>
+</html>
