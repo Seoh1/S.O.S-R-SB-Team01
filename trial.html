@@ -4,24 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Input Form</title>
-    <!-- development version, includes helpful console warnings -->
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  
 </head>
 <body>
-    
-    <!--Casey's help with vue-->
-        <div id="app">
-    <h1>Businesses</h1>
-    <div class="business" v-for="business in businesses">
-        <ul>
-            <li>Address: {{ business.Address }}</li>
-            <li>Business Type: {{ business.Business_Type }}</li>
-            <li>Email: {{ business.Email }}</li>
-            <li>Name: {{ business.Name }}</li>
-            <li>Number: {{ business.Number }}</li>
-        </ul>
-    </div>
-    </div>
+
   
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -65,7 +51,7 @@
        
         function gotData(data) {
             var businesses = data.val();
-            app._data.businesses = businesses;
+        
             console.log(businesses);
             var keys = Object.keys(businesses);
 
@@ -164,14 +150,5 @@
         <button type = "reset"> Reset </button>
         <button onclick= "writeData()"> Submit </button>
     </form>
-    <!-- initialize vue application into id="app" -->
-    <script>
-        var app = new Vue({
-            el: '#app',
-            data: {
-                businesses: {}
-            }
-        });
-    </script>
 </body>
 </html>
