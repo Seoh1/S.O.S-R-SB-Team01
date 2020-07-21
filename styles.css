@@ -5,6 +5,10 @@ body {
 
 .welcome-text{
     color: rebeccapurple;
+<<<<<<< HEAD
+=======
+    /* background-blend-mode; */
+>>>>>>> 27473ba26d97228c8ed3d060f48ef84b2e6c48c5
     position: absolute;
     top: 10%;
     left: 35%;
@@ -281,11 +285,15 @@ body {
 
 
 /* END of the styles for the form*/
+<<<<<<< HEAD
+=======
+
+>>>>>>> 27473ba26d97228c8ed3d060f48ef84b2e6c48c5
 
 /* beginning of styles for category pages*/
 
 ul{
-    list-style-type: none;
+    list-style-type: none; /*to get ride of bullet points*/
     padding: 0;
 }
 
@@ -302,8 +310,9 @@ li{ /*To create a block of shade around data */
     float: left;
 }
 
-li:nth-child(even){
+li:nth-child(1){
     padding: 20px;
+<<<<<<< HEAD
     background:black;
     opacity: 0.7;
 }
@@ -312,15 +321,24 @@ li span{
     display: block;
     float: left;
     
+=======
+    background: #f2f2f2;
+
 }
 
-/* li span:nth-child(2){
-    font-size: 16px;
-    margin-top: 6px;
-    color: #999;
-} */
+li span{ /*span meaning: name, address, etc*/
+    display: block; /*this helps the data to stay as a block*/
+>>>>>>> 27473ba26d97228c8ed3d060f48ef84b2e6c48c5
+}
 
-li div{
+li span:nth-child(1){
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 6px;
+    color: #000;
+}
+
+/* li div{
     position: absolute;
     top: 0;
     right: 0px;
@@ -330,9 +348,11 @@ li div{
     padding: 10px 0;
     font-weight:  bold;
     cursor:  pointer;
-}
+} */
 
-form input{
+/*End of the styles for category pages
+
+/* form input{
     float: left;
     width: 38%;
     margin: 0;
@@ -369,4 +389,10 @@ button{
     font-family: ubuntu;
     letter-spacing: 1px;
     color: #999;
+<<<<<<< HEAD
 }
+=======
+
+} */
+
+>>>>>>> 27473ba26d97228c8ed3d060f48ef84b2e6c48c5
