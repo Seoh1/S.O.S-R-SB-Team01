@@ -297,13 +297,15 @@ li{ /*To create a block of shade around data */
     padding: 20px;
     background-color: gray;
     font-size: 15px;
-    color:white;
-    opacity: 0.5;
+    /* color:white; */
+    opacity: 0.7;
     position: relative;
     border-bottom: 1px solid #e6e6e6;
     height: 140px;
     width: 160px;
     float: left;
+    width: 55%;
+    
 }
 
 li:nth-child(1){
@@ -314,6 +316,7 @@ li:nth-child(1){
 
 li span{ /*span meaning: name, address, etc*/
     display: block; /*this helps the data to stay as a block*/
+    color: white;
 }
 
 li span:nth-child(1){
@@ -321,6 +324,7 @@ li span:nth-child(1){
     font-weight: bold;
     margin-top: 6px;
     color: #000;
+
 }
 
 /* li div{
