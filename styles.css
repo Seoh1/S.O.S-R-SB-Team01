@@ -292,22 +292,27 @@ ul{
 
 li{ /*To create a block of shade around data */
     padding: 20px;
-    background: #f6f6f6;
+    background-color: gray;
     font-size: 15px;
-    color: #555;
+    color:white;
+    opacity: 0.5;
     position: relative;
     border-bottom: 1px solid #e6e6e6;
     height: 140px;
     width: 160px;
+    float: left;
 }
 
 li:nth-child(even){
     padding: 20px;
-    background: #f2f2f2;
+    background:black;
+    opacity: 0.7;
 }
 
 li span{
     display: block;
+    float: left;
+    
 }
 
 /* li span:nth-child(2){
