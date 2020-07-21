@@ -304,8 +304,8 @@ li{ /*To create a block of shade around data */
     height: 140px;
     width: 160px;
     float: left;
-    width: 55%;
-    
+    width: 25%;
+
 }
 
 li:nth-child(1){
