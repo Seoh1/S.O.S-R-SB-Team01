@@ -34,7 +34,7 @@
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
-        var db = firebase.firestore();
+        const db = firebase.firestore();
 
 
 
@@ -132,31 +132,13 @@
                     <option value="Pickup"> Returant pick up</option>
                 </select>
             </div>
+            <div>
+                <button type="reset"> Reset </button>
+                <!-- <button onclick="writeData()"> Submit </button> -->
+            </div>
     </form>
-    <button type="reset"> Reset </button>
-    <button onclick="writeData()"> Submit </button>
-
-    <!-- <script>
-
-        const BizForm = document.querySelector("#BizFormForm");
-        db.collection('Business').get().then((snapshot) => {
-            snapshot.docs.forEach(doc => {
-                console.log(doc.data());
-            })
-        })
-
-        //saving data 
-        BizForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-            db.collection('Business').add({
-                Name: form.Biz - Name.value,
-                Address: form.L1.value + form.L2.value,
-                Email: form.Email.value,
-                Number: form.Number.value,
-                Business_Type: form.Type.value
-            })
-        })
-    </script> -->
+    <button type = "submit"> Add Data </button>
+    <script src = "addData.js"></script>
 </body>
 
 </html>
