@@ -86,12 +86,10 @@
         ref.on("value",gotData, errData);
 
         function gotData(data) {
-<<<<<<< HEAD
         var businesses = data.val();
         // set the businesses data in vue
 
         // here needs to be sorted before printing
-=======
             var businesses = data.val();
         
             console.log(businesses);
@@ -105,7 +103,6 @@
                // var li = createElement('li', name + ':' + email + number);
                // li.parent("Business list");
             }
->>>>>>> cb7e6b335946ac6bcd70fa515c125b61062566f4
 
         app._data.businesses = businesses;
         // var keys = Object.keys(businesses);
