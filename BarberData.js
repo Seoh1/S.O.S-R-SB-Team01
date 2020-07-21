@@ -19,18 +19,16 @@ function renderData(doc){
     email.textContent = doc.data().Email;
     number.textContent = doc.data().Number;
     bizType = doc.data().Business_Type;
-
-    li.append("Name:", name);
-    li.append(document.createElement("br"));
-    li.append("Business Type: " , bizType);
-    li.append(document.createElement("br"));
-    li.append("Address: ", address);
-    li.append(document.createElement("br"));
+    li.append(name);
+    li.append(bizType);
+   // li.append(document.createElement("br"));
+    li.append(address);
+   // li.append(document.createElement("br"));
     li.append("Contact Number: ", number);
-    li.append(document.createElement("br"));
+   // li.append(document.createElement("br"));
     li.append("Contact Email: ", email);
-    li.append(document.createElement("br"));
-    li.append("------------------------------");
+   // li.append(document.createElement("br"));
+    //li.append("------------------------------");
 
     bizList.append(li);
 }
