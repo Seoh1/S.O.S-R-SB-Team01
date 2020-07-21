@@ -300,22 +300,25 @@ li{ /*To create a block of shade around data */
     border-bottom: 1px solid #e6e6e6;
     height: 140px;
     width: 160px;
+    float: left;
 }
 
-li:nth-child(even){
+li:nth-child(1){
     padding: 20px;
     background: #f2f2f2;
+
 }
 
 li span{ /*span meaning: name, address, etc*/
     display: block; /*this helps the data to stay as a block*/
 }
 
-/* li span:nth-child(2){
+li span:nth-child(1){
     font-size: 16px;
+    font-weight: bold;
     margin-top: 6px;
-    color: #999;
-} */
+    color: #000;
+}
 
 /* li div{
     position: absolute;

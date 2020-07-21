@@ -20,26 +20,27 @@ function renderData(doc){
     number.textContent = doc.data().Number;
     bizType = doc.data().Business_Type;
 
-    li.append("Name:", name);
-    li.append(document.createElement("br"));
-    li.append("Business Type: " , bizType);
-    li.append(document.createElement("br"));
-    li.append("Address: ", address);
-    li.append(document.createElement("br"));
-    li.append("Contact Number: ", number);
-    li.append(document.createElement("br"));
-    li.append("Contact Email: ", email);
-    li.append(document.createElement("br"));
-    li.append("------------------------------");
+    li.append(name);
+
+    li.append(bizType);
+
+    li.append(address);
+
+    li.append(number);
+
+    li.append(email);
+
+    //li.append("------------------------------");
 
     bizList.append(li);
 }
 
 //getting data
-
-db.collection('Business').where("Business_Type", "==", "Bike").get().then((snapshot) => {
-    snapshot.docs.forEach(doc => {
-        renderData(doc);
-    })
-});
+function getCategoryData(BusinessType){
+    db.collection('Business').where("Business_Type", "==", BusinessType).get().then((snapshot) => {
+        snapshot.docs.forEach(doc => {
+            renderData(doc);
+        })
+    });  
+}
 
