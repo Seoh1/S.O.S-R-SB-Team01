@@ -304,13 +304,12 @@ li{ /*To create a block of shade around data */
     height: 140px;
     width: 160px;
     float: left;
-    width: 25%;
+    width: 20%;
 
 }
 
 li:nth-child(1){
     padding: 20px;
-    background: #f2f2f2;
 
 }
 
