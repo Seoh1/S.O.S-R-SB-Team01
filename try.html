@@ -16,6 +16,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
 
 
+
 </head>
 
 <body>
@@ -36,11 +37,9 @@
         firebase.initializeApp(firebaseConfig);
         var db = firebase.firestore();
 
-
-
         firebase.analytics();
     </script>
-
+    <!-------------------------------------------------------Need to add source to app.js to use eventlistener----------------------------------------------->
     <script>
 
         // function writeData() {
@@ -52,18 +51,28 @@
         //        Number: document.getElementById("biz nums").value,
         //        Business_Type: document.getElementById("Biz Type").value
 
-
-
+       
         //     });
         // }
+
+        const textName = document.querySelector("#BizNameID");
         function writeData() {
 
+            // db.collection('Business').add({
+            //     Name: form.BizName.value,
+            //     Address: form.L1.value + form.L2.value,
+            //     Email: form.Email.value,
+            //     Number: form.Number.value,
+            //     Business_Type: form.Type.value,
+            //     test: "tst"
+            // });
+           
             db.collection("Business").add({
-                Name: document.getElementById("Biz Name").value,
+                Name: document.getElementById("BizNameID").value,
                 Address: document.getElementById("L1").value + " " + document.getElementById("L2").value,
-                Email: document.getElementById("biz email").value,
+                Email: docuemnt.getElementById("Email").value,
                 Number: document.getElementById("biz nums").value,
-                Business_Type: document.getElementById("Type").value
+                Business_Type: document.getElementById("Biz Type").value
 
             })
                 .then(function (docRef) {
@@ -74,18 +83,15 @@
                 });
         }
     </script>
-
-
-
-    <form id="BizFormForm">
+    <form id= "formform">
         <div>
             <label for="Biz Name"> Business Name</label>
             <!-- label for refers to an input id, specified in input. This is to highlight the corresponding textbox-->
-            <input type="text" name="BizName" id="Biz Name" placeholder="Business Name" required>
+            <input type="text" name="name" id="BizNameID" >
         </div>
         <div>
             <label for="L1"> Address Line 1 </label>
-            <input name="L1" id="L1" placeholder="Busniess Address Line 1" required>
+            <input name="L1" id="L1" placeholder="Business Address Line 1" >
         </div>
         <div>
             <label for="L2"> Address Line 2 (optional) </label>
@@ -93,78 +99,17 @@
         </div>
         <div>
             <label for="biz email"> Business Email </label>
-            <input type="email" name="Email" id="biz email" required>
+            <input type="email" name="Email" id="biz email" >
 
         </div>
         <div>
             <label for="biz nums"> Business Number</label>
-            <input type="number" name="Number" id="biz nums" required>
+            <input type="number" name="Number" id="BizNums" >
         </div>
-        <div>
-            <label> Business Type
-                <select id ="Type">
-                    <option value="Resturant"> Resturant</option>
-                    <option value="Barber"> Barber</option>
-                    <option value="Bike"> Bike </option>
-                    <option value="Boutique"> Boutique </option>
-                    <option value="Coffee"> Coffee </option>
-                    <option value="Florist"> Florist</option>
-
-                </select>
-            </label>
-        </div>
-        <div>
-            <h1>
-                Please check your business status
-            </h1>
-            <div>
-                <label for="mask"> Require Mask </label>
-                <input type="checkbox" name="Mask" id="mask">
-            </div>
-            <div>
-                <label for="delivery"> Delivery </label>
-                <input type="checkbox" name="Delivery" id="delivery">
-            </div>
-            <div>
-                <label for="take out"> Take Out </label>
-                <select>
-                    <option value="Crubside"> Curbside pick up </option>
-                    <option value="Pickup"> Returant pick up</option>
-                </select>
-            </div>
-<<<<<<< HEAD
-        </div>
-    <div class="button_click">
-        <button type = "reset"> Reset </button></div>
-        
-        <button onclick= "writeData()"> Submit </button>
-=======
->>>>>>> 92a4a7e7f6d6597d7104f6872e10b110fcb068d7
+        <!-- <button onclick = "writeData()"> Submit </button> -->
     </form>
-    <button type="reset"> Reset </button>
-    <button onclick="writeData()"> Submit </button>
-
-    <!-- <script>
-
-        const BizForm = document.querySelector("#BizFormForm");
-        db.collection('Business').get().then((snapshot) => {
-            snapshot.docs.forEach(doc => {
-                console.log(doc.data());
-            })
-        })
-
-        //saving data 
-        BizForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-            db.collection('Business').add({
-                Name: form.Biz - Name.value,
-                Address: form.L1.value + form.L2.value,
-                Email: form.Email.value,
-                Number: form.Number.value,
-                Business_Type: form.Type.value
-            })
-        })
-    </script> -->
+    <button onclick = "writeData()"> Submit </button>
 </body>
+
 
 </html>
