@@ -43,19 +43,6 @@
 
     <script>
 
-        // function writeData() {
-        //     firebase.database().ref("Business").push({
-
-        //        Name: document.getElementById("Biz Name").value,
-        //        Address: document.getElementById("L1").value + " " + document.getElementById("L2").value,
-        //        Email: document.getElementById("biz email").value,
-        //        Number: document.getElementById("biz nums").value,
-        //        Business_Type: document.getElementById("Biz Type").value
-
-
-
-        //     });
-        // }
         function writeData() {
 
             db.collection("Business").add({
@@ -132,12 +119,11 @@
                     <option value="Pickup"> Returant pick up</option>
                 </select>
             </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-        </div>
+
     <div class="button_click">
         <button type = "reset"> Reset </button></div>
         
+<<<<<<< HEAD
         <!-- <button onclick= "writeData()"> Submit </button> -->
 <!-- ======= -->
 <!-- >>>>>>> 92a4a7e7f6d6597d7104f6872e10b110fcb068d7 -->
@@ -148,9 +134,12 @@
             </div> -->
 <!-- >>>>>>> 7f3d071528f32fde7bc1a2c0ad75aa7a3f69d8f0 -->
     <input type="submit"> </input> 
+=======
+        <button onclick= "writeData()"> Submit </button>
+>>>>>>> 437a3698d731bf116d24a0e6a834052a60cd39b5
 
     </form>
-    <button type = "submit"> Add Data </button>
+    <!-- <button type = "submit"> Add Data </button> -->
     <script src = "addData.js"></script>
 </body>
 
