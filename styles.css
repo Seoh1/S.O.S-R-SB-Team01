@@ -5,7 +5,7 @@ body {
 
 .welcome-text{
     color: rebeccapurple;
-    background-blend-mode;
+    /* background-blend-mode; */
     position: absolute;
     top: 10%;
     left: 35%;
@@ -283,6 +283,7 @@ body {
 
 /* END of the styles for the form*/
 
+
 /* beginning of styles for category pages*/
 
 ul{
@@ -328,6 +329,8 @@ li span{ /*span meaning: name, address, etc*/
     cursor:  pointer;
 } */
 
+/*End of the styles for category pages
+
 /* form input{
     float: left;
     width: 38%;
@@ -365,4 +368,6 @@ button{
     font-family: ubuntu;
     letter-spacing: 1px;
     color: #999;
+
 } */
+

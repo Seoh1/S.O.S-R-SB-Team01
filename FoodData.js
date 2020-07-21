@@ -37,9 +37,10 @@ function renderData(doc){
 
 //getting data
 
-db.collection('Business').where("Business_Type", "==", "Resturant").get().then((snapshot) => {
+db.collection('Business').where("Business_Type", "==", "Restaurant").get().then((snapshot) => {
     snapshot.docs.forEach(doc => {
         renderData(doc);
     })
+
 });
 
