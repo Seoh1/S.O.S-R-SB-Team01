@@ -34,7 +34,7 @@
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
-        var db = firebase.firestore();
+        const db = firebase.firestore();
 
 
 
@@ -133,6 +133,7 @@
                 </select>
             </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
         </div>
     <div class="button_click">
         <button type = "reset"> Reset </button></div>
@@ -140,31 +141,15 @@
         <button onclick= "writeData()"> Submit </button>
 =======
 >>>>>>> 92a4a7e7f6d6597d7104f6872e10b110fcb068d7
+=======
+            <div>
+                <button type="reset"> Reset </button>
+                <!-- <button onclick="writeData()"> Submit </button> -->
+            </div>
+>>>>>>> 7f3d071528f32fde7bc1a2c0ad75aa7a3f69d8f0
     </form>
-    <button type="reset"> Reset </button>
-    <button onclick="writeData()"> Submit </button>
-
-    <!-- <script>
-
-        const BizForm = document.querySelector("#BizFormForm");
-        db.collection('Business').get().then((snapshot) => {
-            snapshot.docs.forEach(doc => {
-                console.log(doc.data());
-            })
-        })
-
-        //saving data 
-        BizForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-            db.collection('Business').add({
-                Name: form.Biz - Name.value,
-                Address: form.L1.value + form.L2.value,
-                Email: form.Email.value,
-                Number: form.Number.value,
-                Business_Type: form.Type.value
-            })
-        })
-    </script> -->
+    <button type = "submit"> Add Data </button>
+    <script src = "addData.js"></script>
 </body>
 
 </html>

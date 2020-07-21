@@ -37,28 +37,9 @@ function renderData(doc){
 
 //getting data
 
-db.collection('Business').get().then((snapshot) => {
+db.collection('Business').where("Business_Type", "==", "Barber").get().then((snapshot) => {
     snapshot.docs.forEach(doc => {
         renderData(doc);
     })
 });
-
-// //write data
-// bizForm.addEventListener('submit', (e) => {
-//     e.preventDefault();
-//     db.collection('Business').add({
-//         Name: bizForm.name.value,
-//         Address: document.getElementById("L1").value + " " + document.getElementById("L2").value,
-//         // Email: document.getElementById("biz email").value,
-//         // Number: document.getElementById("biz nums").value,
-//         // Business_Type: document.getElementById("Type").value
-
-//     })
-//         .then(function (docRef) {
-//             console.log("Document written with ID: ", docRef.id);
-//         })
-//         .catch(function (error) {
-//             console.error("Error adding document: ", error);
-//         });
-// })
 
