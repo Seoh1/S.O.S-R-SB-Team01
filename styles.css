@@ -283,6 +283,9 @@ body {
         opacity: 0.8;
       
 }
+.form-design{
+    box-sizing: border-box;
+}
 
 
 /* END of the styles for the form*/
@@ -326,6 +329,8 @@ li span:nth-child(1){
     color: #000;
 
 }
+
+
 
 /* li div{
     position: absolute;
