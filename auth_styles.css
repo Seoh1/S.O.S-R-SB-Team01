@@ -2,7 +2,7 @@ body{
     background: white;
     font-family: "Lato", sans-serif;
     margin: 0px;
-    padding: 0px;
+    padding: 10px;
     font-size: 16px;
     position: absolute;
     top: -20%;
@@ -12,6 +12,8 @@ body{
 input, button {
     font-family: "Lato", sans-serif;
     font-weight: 700;
+    position: absolute;
+    left: 40px;
 }
 
 .main-div, .loggedin-div{
