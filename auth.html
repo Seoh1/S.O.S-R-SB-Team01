@@ -1,141 +1,62 @@
-<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Login</title>
-        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="styles.css">
-      
-        <style>
-            
-            .body {
-                position: absolute;
-                overflow-y: scroll;
-                width: 100%;
-                top: -20px;
-                bottom: -40px;
-                width: auto;
-                height: auto;
-                background-image: url(img_universal/auth_back2.jpg);
-                background-size: cover; 
-                -webkit-filter: blur(0px);
-            }
+<head>
+  <title>Firebase Login</title>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="auth_style.css" />
+</head>
+<body>
 
-            .head{
-                position: absolute;
-                
-            }
+  <div id="login_div" class="main-div">
+    <h3>Firebase Web login Example</h3>
+    <input type="email" placeholder="Email..." id="email_field" />
+    <input type="password" placeholder="Password..." id="password_field" />
 
-            .header div{
-                float: left;
-                color: #fff;
-                font-family: "Lato", sans-serif;
-                font-size: 40px;
-                font-weight: 200;
-            }
+    <button onclick="login()">Login to Account</button>
+  </div>
 
-            .header div span{
-                color: purple !important;
-
-            }
-
-            .login{
-                position: relative;
-                position: center;
-                height: 1000px;
-                width: 1200px;
-                padding: 10px;
-            }
-
-            .login input [type=text]{
-                width: 500px;
-                height: 500px;
-                background: transparent;
-                border: 1px solid rgba(255, 255, 255, 0.5);
-                border-radius: 2px;
-                color: #fff;
-                font-family: "Lato", sans-serif;
-                font-size: 16px;
-                font-weight: 300;
-                padding: 4px;
-            }
-            .login input [type=password]{
-                width: 500px;
-                height: 500px;
-                background: transparent;
-                border: 1px solid rgba(255, 255, 255, 0.5);
-                border-radius: 2px;
-                color: #fff;
-                font-family: "Lato", sans-serif;
-                font-size: 16px;
-                font-weight: 300;
-                padding: 4px;
-            }
-
-            .login input[type=button]{
-                width: 260px;
-                height: 35px;
-                background: white;
-                border: 1px solid rgba(255, 255, 255, 0.5);
-                border-radius: 2px;
-                color: #fff;
-                font-family: "Lato", sans-serif;
-                font-size: 16px;
-                font-weight: 300;
-                padding: 4px;
-            }
-
-            .login input[type=button]:hover{
-                opacity: 0.7;
-            }
-            .login input [type=button]:active{
-                opacity: 0.5;
-            }
-            .login input [type=text]:focus{
-                outline: none;
-                border: 1px solid rgba(255, 255, 255, 0.8);
-            }
-            .login input [type=password]:focus{
-                outline: none;
-                border:  1px solid rgba(255, 255, 255, 0.8);
-            }
-            .login input [type=button]:focus{
-                outline: none;
-            }
-
-            ::-webkit-input-placeholder{
-                color: rgba(255, 255, 255, 0.4);
-            }
-
-            ::-moz-input-placeholder{
-                color: rgba(255, 255, 255, 0.4);
-            }
+  <div id="user_div" class="loggedin-div">
+    <h3>Welcome User</h3>
+    <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
+    <button onclick="logout()">Logout</button>
+  </div>
 
 
-        </style>
-       
+  <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+    <!---<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js"></script>-->
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-firestore.js"></script>
 
 
-    </head>
-
-    <body oncontextmenu="return false">
-        <div class="body">
-            <div class="grad">
-                <div class="header">
-                <div> Log<span>in here</span></div>
-                </div>
-            <br>
-            <form name = "login">
-                <div class="login">
-                    <input type="text" placeholder="username" name="userid"></br>
-                    <input type="password" placeholder="password" name="pswrd"></br>
-                    <input type="button" placeholder="check(this.form)" value ="Login"></br>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+              https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
 
 
-                </div>
-            </form>
-            </div>
-        </div>
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
 
-    </body>
+
+  
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyBRmNBPErjiQzclhKDNHC4DJ-NNTdZD6GU",
+        authDomain: "team-universal-database.firebaseapp.com",
+        databaseURL: "https://team-universal-database.firebaseio.com",
+        projectId: "team-universal-database",
+        storageBucket: "team-universal-database.appspot.com",
+        messagingSenderId: "359143047818",
+        appId: "1:359143047818:web:0db611886ddacafd6ba373",
+        measurementId: "G-LJZVEVE4BC"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    firebase.analytics();
+</script>
+
+  <script src="auth_index.js"></script>
+
+</body>
 </html>
