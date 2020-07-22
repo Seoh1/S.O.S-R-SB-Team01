@@ -1,6 +1,7 @@
 body {
     font-family: "Lato", sans-serif;
     margin: 0px;
+    /* background-color: ; */
 }
 
 .welcome-text{
@@ -13,7 +14,7 @@ body {
 }
 
 .category-search{
-    color: blue;
+    color: purple;
     position: absolute;
     top: 25%;
     left: 40%;
@@ -38,6 +39,8 @@ body {
     justify-content: space-between;
     padding: 38px;
 }
+/* Set default styles for tab content */
+
 
 .left-side {
     display: flex;
@@ -49,6 +52,7 @@ body {
     margin-right: 20px;
     font-size: 0.9em;
     text-transform: uppercase;
+
 
 
 }
@@ -89,7 +93,7 @@ body {
 }
 
 .biz-link-wrapper a{
-    color: whitesmoke;
+    color: purple;
     text-decoration: none;
     transition: color 0.5s;
 }
@@ -200,22 +204,22 @@ body {
   }
   
   /* Full-width input fields */
-  .form-container input[type=text], .form-container input[type=password] {
+  /* .form-container input[type=text], .form-container input[type=password] {
     width: 100%;
     padding: 16px 0px;
     margin: 5px 0 18px 0;
     border: none;
     background: #f1f1f1;
-  }
+  } */
   
   /* When the inputs get focus, do something */
-  .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  /* .form-container input[type=text]:focus, .form-container input[type=password]:focus {
     background-color: #ddd;
     outline: none;
-  }
+  } */
   
   /* Set a style for the submit/login button */
-  .form-container .btn {
+  .button_click {
     background-color: purple;
     color: white;
     padding: 16px 20px;
@@ -294,19 +298,15 @@ li{ /*To create a block of shade around data */
     padding: 20px;
     background-color: gray;
     font-size: 15px;
-    /* color:white; */
+    color:white;
     opacity: 0.7;
     position: relative;
-    border-bottom: 1px solid #e6e6e6;
+    /* border-bottom: 1px solid #e6e6e6; */
     height: 140px;
     width: 160px;
     float: left;
-<<<<<<< HEAD
     width: 20%;
 
-=======
-    max-width: 1000px;
->>>>>>> e896e82fad4c8d32a536794a98c5000eb69bbe15
 }
 
 li:nth-child(1){
