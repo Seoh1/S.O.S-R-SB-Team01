@@ -1,0 +1,12 @@
+.BizFormForm{
+
+    width: 380px;
+    height: 480px;
+    position: absolute;
+    margin: 6% auto;
+    background: white;
+    padding: 5px;
+    /* overflow: hidden;
+     */
+     position: center;
+}
