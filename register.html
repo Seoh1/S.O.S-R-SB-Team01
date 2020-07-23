@@ -8,6 +8,7 @@
   <!---<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js"></script>-->
   <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
   <link rel="stylesheet" href="register.css">
 
 
@@ -68,6 +69,7 @@
     firebase.initializeApp(firebaseConfig);
     //const fileToUpload = document.getElementById("menu");
     const db = firebase.firestore();
+    const auth = firebase.auth();
 
 
 
@@ -76,14 +78,17 @@
 
 <div  class="registered">
     <!-- <h3> Welcome to Shop Small</h3> -->
-    <h2> Please check in below all that applies</h2>
+   
+    
     <p  id="user_profile_div">
     <div class="form-box"> 
+      <input type="text" placeholder="City" id= "email"> Email
+      <input type="password" id = "password"> Password
+      <h2> Please check in below all that applies</h2>
       <p> Preferred location </p>
       <div class="location">
         <label for="city"> City </label>
         <input type="text" placeholder="City" id= "Preferred_city">
-
       </div>
       <p> Preferred businesses </p>
       <div class="business_type">
@@ -102,7 +107,8 @@
 
           
       </div>
-      <p> COVID comfortability </p>
+      <form id = "customerSignUp">
+        <p> COVID comfortability </p>
       <div class="covid_comfy">
         <div>
           <label for="mask"> Require Mask </label>
@@ -129,6 +135,8 @@
             <option value="Pickup"> Returant pick up</option>
         </select>
       </div>
+      </form>
+      
       </div>
 
 
@@ -172,5 +180,9 @@
     }
 
   </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="index.js"></script>
+<script src="auth_index.js"></script>
   </body>
   </html>
