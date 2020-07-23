@@ -1,0 +1,11 @@
+script {
+    display:block;
+    color:#ef9a9a;
+    background-color:#321117;
+    font-weight:normal;
+    padding:10px;
+    border:1px solid red;
+    font-family:"Courier New";
+    font-size:0.94em;
+    text-align:left;
+}

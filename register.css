@@ -1,0 +1,49 @@
+.form-box, .submit-section{
+    width: 380px;
+    height: 480px;
+    position: relative;
+    margin: 6% auto;
+    background: white;
+    padding: 5px;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.location, .covid_comfy, .dine_in, .delivery_options ,.submit-section, .business_type{
+    text-align: center;
+    background-color: transparent;
+}
+/* .submit-section{
+    position: relative;
+    margin: 6% auto;
+    background: white;
+    padding: 5px;
+    overflow: hidden;
+} */
+
+.registered{
+    width: 400px;
+    height: 550px;
+    position: relative;
+    margin: 6% auto;
+    background: white;
+    padding: 5px;
+    shadow: indigo;
+    /* overflow: hidden; */
+}
+
+.toggle-btn{
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px gray;
+    border-radius: 30px;
+    
+    padding: 10px 30px;
+    cursor: pointer;
+    background: purple;
+    border: 0;
+    outline: none;
+    position: relative;
+    /* border-radius: 2px; */
+}

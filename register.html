@@ -8,14 +8,46 @@
   <!---<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js"></script>-->
   <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-storage.js"></script>
+  <link rel="stylesheet" href="register.css">
 
 
   <!-- TODO: Add SDKs for Firebase products that you want to use
             https://firebase.google.com/docs/web/setup#available-libraries -->
   <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
 
+  <style>
+    h2 {
+        color: purple;
+        text-indent: 40px;
+        text-transform: uppercase;
+        display: block;
+        margin-top: 1em;
+        /* border-radius: 4px; */
+        margin-bottom: 1em;
+        margin-left: 1;
+        margin-right: 3;
+        text-align: center;
+    }
+    </style>
+
+<style>
+  p {
+      color: purple;
+      text-indent: 40px;
+      text-transform: uppercase;
+      display: block;
+      margin-top: 1em;
+      /* border-radius: 4px; */
+      margin-bottom: 1em;
+      margin-left: 1;
+      margin-right: 3;
+      text-align: center;
+  }
+  </style>
+
 
 </head>
+
 <body>
 
   
@@ -45,66 +77,72 @@
     <!-- <h3> Welcome to Shop Small</h3> -->
     <h2> Please check in below all that applies</h2>
     <p  id="user_profile_div">
-      
-    <p> Preferred location </p>
-    <div class="locatiion">
-      <label for="city"> City </label>
-      <input type="text" placeholder="City" id= "Preferred_city">
+    <div class="form-box"> 
+      <p> Preferred location </p>
+      <div class="location">
+        <label for="city"> City </label>
+        <input type="text" placeholder="City" id= "Preferred_city">
 
-    </div>
-
-    <div class="business_type">
-        <label for="type"> Restaurant </label>
-        <input type="checkbox" value = "yes" name="Restaurant" id="food">
-        <label for="type"> Barber Shop </label>
-        <input type="checkbox" value = "yes"  name="Barber Shop" id="barber">
-        <label for="type"> Florist </label>
-        <input type="checkbox" value = "yes"  name="Florist" id="florist">
-        <label for="type"> Coffee Shops </label>
-        <input type="checkbox" value = "yes" name="Coffee Shop" id="coffee">
-        <label for="type"> Boutique </label>
-        <input type="checkbox" value = "yes" name="Boutique" id="boutique">
-        <label for="type"> Bike </label>
-        <input type="checkbox" value = "yes" name="Bike" id="bike">
-
-        
-    </div>
-
-    <div class="covid_comfy">
-      <div>
-        <label for="mask"> Require Mask </label>
-        <input type="checkbox" value = "yes" name="Mask" id="mask">
       </div>
+      <p> Preferred businesses </p>
+      <div class="business_type">
+          <label for="type"> Restaurant </label>
+          <input type="checkbox" value = "yes" name="Restaurant" id="food">
+          <label for="type"> Barber Shop </label>
+          <input type="checkbox" value = "yes"  name="Barber Shop" id="barber">
+          <label for="type"> Florist </label>
+          <input type="checkbox" value = "yes"  name="Florist" id="florist">
+          <label for="type"> Coffee Shops </label>
+          <input type="checkbox" value = "yes" name="Coffee Shop" id="coffee">
+          <label for="type"> Boutique </label>
+          <input type="checkbox" value = "yes" name="Boutique" id="boutique">
+          <label for="type"> Bike </label>
+          <input type="checkbox" value = "yes" name="Bike" id="bike">
+
+          
+      </div>
+      <p> COVID comfortability </p>
+      <div class="covid_comfy">
+        <div>
+          <label for="mask"> Require Mask </label>
+          <input type="checkbox" value = "yes" name="Mask" id="mask">
+        </div>
+      </div>
+      
+      <div class = "dine_in">
+        <label for="dine"> Dine_In </label>
+        <input type="checkbox" name="Dine" id="dine" value = "yes">
     </div>
+    <p> Preferred location </p>
+      <div class="delivery_options">
 
-    <div>
-      <label for="dine"> Dine_In </label>
-      <input type="checkbox" name="Dine" id="dine" value = "yes">
-  </div>
-
-    <div class="delivery_options">
+        <div>
+          <label for="delivery"> Delivery </label>
+          <input type="checkbox" value = "yes" name="Delivery" id="delivery">
+      </div>
 
       <div>
-        <label for="delivery"> Delivery </label>
-        <input type="checkbox" value = "yes" name="Delivery" id="delivery">
-    </div>
-
-    <div>
-      <label for="take_out"> Take Out </label>
-      <select id = "take out">
-          <option value="Curbside"> Curbside pick up </option>
-          <option value="Pickup"> Returant pick up</option>
-      </select>
-    </div>
-    </div>
+        <label for="take_out"> Take Out </label>
+        <select id = "take out">
+            <option value="Curbside"> Curbside pick up </option>
+            <option value="Pickup"> Returant pick up</option>
+        </select>
+      </div>
+      </div>
 
 
+      <div class="submit-section">
+        <!-- <button type="button" class="toggle-btn" onclick="login()" id= "signIn">Log In</button> -->
+
+        <button type = "button" class =  "toggle-btn" onclick= "writeData()" > Submit Account </button>
+      
+      
+      </div>
   </div>
 
-  <button onclick= "writeData()"> Submit Account </button>
-
-
-
+  
+  </div>
+  
   <script>
     function writeData() {
       db.collection("Customer").add({
