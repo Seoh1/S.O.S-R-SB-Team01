@@ -7,19 +7,19 @@
         Web for R&SB team-01
     </title>
 
-    
-
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
-    
+
     <!---<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js"></script>-->
     <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-storage.js"></script>
 
-
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <!-- TODO: Add SDKs for Firebase products that you want to use
               https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
@@ -28,6 +28,15 @@
 
     <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('select').formSelect();
+        });
+    </script>
 
     <script>
         // Your web app's Firebase configuration
@@ -47,6 +56,7 @@
         const auth = firebase.auth();
 
         firebase.analytics();
+
     </script>
 
 
@@ -60,7 +70,7 @@
             <div class="left-side">
                 <div class="nav-link-wrapper active-nav-link">
                     <div class="logged-out">
-                    <a href="index.html">Home</a>
+                        <a href="index.html">Home</a>
                     </div>
                 </div>
                 <div class="nav-link-wrapper active-nav-link">
@@ -73,17 +83,22 @@
             <div class="right-side">
                 <div class="nav-link-wrapper active-nav-link">
                     <div class="logged-in">
-                        <a href="#" class="grey-text modal-trigger" id = "logout">Log out</a>
+                        <a href="#" class="grey-text modal-trigger" id="logout">Log out</a>
                     </div>
                 </div>
                 <div class="nav-link-wrapper active-nav-link">
                     <div class="logged-out">
-                        <a href="#" class="grey-text modal-trigger" data-target = "modal-login">Log in</a>
+                        <a href="#" class="grey-text modal-trigger" data-target="modal-login">Log in</a>
                     </div>
                 </div>
                 <div class="nav-link-wrapper active-nav-link">
                     <div class="logged-out">
-                        <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
+                        <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Business Sign Up</a>
+                    </div>
+                </div>
+                <div class="nav-link-wrapper active-nav-link">
+                    <div class="logged-out">
+                        <a href = "register.html">Customer Sign Up</a>
                     </div>
                 </div>
 
@@ -139,7 +154,7 @@
                     <div>
                         <label for="biz email"> Business Email </label>
                         <input type="email" name="Email" id="biz email" required>
-        
+
                     </div>
                     <div>
                         <label for="biz nums"> Business Number</label>
@@ -148,33 +163,61 @@
 
                     <div>
                         <label> Business Type
-                            <input type = 'radio' id="Type" 
+                            <select class="browser-defalut">
                                 <option value="Restaurant"> Restaurant</option>
                                 <option value="Barber"> Barber</option>
                                 <option value="Bike"> Bike </option>
                                 <option value="Boutique"> Boutique </option>
                                 <option value="Coffee"> Coffee </option>
                                 <option value="Florist"> Florist</option>
-        
-                            </radio>
+
+                            </select>
                         </label>
                     </div>
-                     <!-- added by Eliza from the source: https://www.w3schools.com/tags/att_input_accept.asp-->
-            <div class="uploading_menu">
-                <label> Add Menu (JPEG)
-                    <form action="/action_page.php">
-                        <label for="img">Select image:</label>
-                        <input type="file" id="menu" name="menu" accept=".JPEG">
-                    </form>
-                </label>
-                <!-- done by Eliza-->
-            </div>
+                    <!-- added by Eliza from the source: https://www.w3schools.com/tags/att_input_accept.asp-->
+                    <div class="uploading_menu">
+                        <label> Add Menu (JPEG)
+                            <form action="/action_page.php">
+                                <label for="img">Select image:</label>
+                                <input type="file" id="menu" name="menu" accept=".JPEG">
+                            </form>
+                        </label>
+                        <!-- done by Eliza-->
+                    </div>
 
-                    
+                    <div>
+                        <progress value="0" max="100" id="uploader"> 0%</progress>
+                        <button class = "btn purple" onClick="uploadMenu()" id="submitMenu"> Confirm & Upload Menu </button>
+                    </div>
+                    <div>
 
-                    
-                    
-                    <button class="btn purple z-depth-0">Sign up</button>
+                            Please check your business status
+                        <div>
+                            <label for="mask" id ='check'> Require Mask 
+                            <input type="checkbox" name="Mask" id="mask" value="Mask">
+                            <span></span>
+                        </label>
+                        </div>
+                        <div>
+                            <label for="dine"> Dine_In 
+                            <input type="checkbox" name="Dine" id="dine">
+                            <span></span>
+                        </label>
+                        </div>
+                        <div>
+                            <label for="delivery"> Delivery
+                            <input type="checkbox" name="Delivery" id="delivery" value="Delivery">
+                            <span>
+
+                            </span>
+                        </label>
+                        </div>
+                    </div>
+
+
+
+
+                        <button class="btn purple z-depth-0" onclick= "writeData()">Sign up</button>
                 </form>
             </div>
         </div>
@@ -361,7 +404,68 @@
     })
 
 
-</script
+</script>
+<script>
+
+    function writeData() {
+
+        var storageRef = firebase.storage().ref('menu/' + 'file.name');
+
+        db.collection("Business").add({
+            Name: document.getElementById("Biz Name").value,
+            Address: document.getElementById("L1").value + " " + document.getElementById("L2").value,
+            Email: document.getElementById("biz email").value,
+            Number: document.getElementById("biz nums").value,
+            Business_Type: document.getElementById("Type").value,
+            Mask_Required: document.getElementById("mask").checked,
+            Dine_In: document.getElementById('dine').checked,
+            Delivery_available: document.getElementById("delivery").checked
+
+        })
+            .then(function (docRef) {
+                console.log("Document written with ID: ", docRef.id);
+            })
+            .catch(function (error) {
+                console.error("Error adding document: ", error);
+            });
+
+
+
+        //listen for file selection -> credit to firebase offical tutorial with firecast
+    }
+    var uploadTracker = document.getElementById("uploader");
+    var fileButton = document.getElementById("menu");
+    //get file
+    var file = null;
+    //create a storage ref
+    var storageRef = null;
+    // upload file
+    var task = null;
+
+    fileButton.addEventListener('change', function (e) {
+        file = e.target.files[0];
+        storageRef = firebase.storage().ref('Menus/' + document.getElementById("Biz Name") + " " + "menu");
+
+    });
+    function uploadMenu() {
+        task = storageRef.put(file);
+        task.on('state_changed',
+            function progress(snapshot) {
+                var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                uploadTracker.value = percentage;
+
+            },
+            function error(er) {
+
+            },
+            function complete() {
+
+            }
+        );
+    }
+
+
+</script>
 
 <!-- this sctipt of JS is for printing out all the restaurants  -->
 <!-- this is the end of the script for printing available restaurants ---Not working!!!!!-->
