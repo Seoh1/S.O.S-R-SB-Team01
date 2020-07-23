@@ -29,23 +29,47 @@ firebase.auth().onAuthStateChanged(function(user) {
     }
   });
 
-  //sign-in Credit to The Net Ninjia for tutorial "https://www.youtube.com/watch?v=wkdCpktUfGg&list=PL4cUxeGkcC9jUPIes_B8vRjn1_GaplOPQ&index=5"
-  const signupForm = document.querySelector('#signup-form');
-  signupForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    // get user info
-    const email = signupForm['signup-email'].value;
-    const password = signupForm['signup-password'].value;
-    
-    //sign up uset to auth
-    auth.createUserWithEmailAndPassword(email, password).then(cred =>{
-    
-      const modal = document.querySelector('#modal-signup');
-      M.Modal.getInstance(modal).close();
-      signupForm.reset();
-    });
+  // //sign-in Credit to The Net Ninjia for tutorial "https://www.youtube.com/watch?v=wkdCpktUfGg&list=PL4cUxeGkcC9jUPIes_B8vRjn1_GaplOPQ&index=5"
+  // const signupForm = document.querySelector('#signup-form');
+  // //signupForm.addEventListener('submit', (e) => {
+  //   //e.preventDefault();
 
-  })
+  // function bizSignUp(){
+  //       // get user info
+  //       const email = document.getElementById('signup-email').value;
+  //       const password = document.getElementById('signup-password').value;
+        
+  //       //sign up uset to auth
+  //       auth.createUserWithEmailAndPassword("try1@gmail.com", "password234").then(cred =>{
+        
+  //         const modal = document.querySelector('#modal-signup');
+  //         M.Modal.getInstance(modal).close();
+  //         signupForm.reset();
+  //       });
+  // }
+
+  // //})
+
+  
+  // const custForm = document.querySelector('#customerSignUp');
+  // // custForm.addEventListener('submit', (e) => {
+  // //   e.preventDefault();
+  //   // get user info
+  //   function cusSignUp(){
+  //     const email = document.getElementById('email').value;
+  //     const password = document.getElementById('password').value;
+      
+  //     //sign up uset to auth
+  //     auth.createUserWithEmailAndPassword(email, password).then(cred =>{
+      
+  //       const modal = document.querySelector('#modal-custSignUp');
+  //       M.Modal.getInstance(modal).close();
+  //       custForm.reset();
+  //     });
+  //   }
+
+
+  // })
   
   const logout = document.querySelector('#logout');
   

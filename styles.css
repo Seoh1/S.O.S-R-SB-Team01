@@ -353,10 +353,7 @@ li span:nth-child(1){
 
 }
 
-[type="radio"]:not(:checked), [type="radio"]:checked {
-    position: relative; 
-    opacity: 1; 
-}
+
 
 .astext {
     background:none;

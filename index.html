@@ -58,14 +58,14 @@
 
             <div class="left-side">
                 <div class="nav-link-wrapper active-nav-link">
-                    <div class="logged-out">
+        
                         <a href="index.html">Home</a>
-                    </div>
+              
                 </div>
                 <div class="nav-link-wrapper active-nav-link">
-                    <div class="logged-out">
+             
                         <a href="about.html">About</a>
-                    </div>
+           
                 </div>
             </div>
 
@@ -87,7 +87,8 @@
                 </div>
                 <div class="nav-link-wrapper active-nav-link">
                     <div class="logged-out">
-                        <a href = "register.html">Customer Sign Up</a>
+                        <!-- <a href = "register.html">Customer Sign Up</a> -->
+                        <a href="#" class="grey-text modal-trigger" data-target="modal-custSignUp">Customer Sign Up</a>
                     </div>
                 </div>
 
@@ -113,6 +114,99 @@
             </div>
         </div>
 
+        <!-- Customer Sign UP MODAL -->
+        <!-- Referenced the Modal forms created by The Net Ninja -->
+        <div id="modal-custSignUp" class="modal">
+            <div class="modal-content">
+                <h4>Sign Up</h4><br />
+                <form id="customerSignUp">
+    
+                    Please provide email and password
+
+                    <div class="email-field">
+                        <label for="email"> Email </label>
+                        <input type="text" placeholder="email" id="email" required/>
+                    </div>
+                    <div class="pass-field">
+                        <br><label for="password"> Password </label>
+                        <input type="password" placeholder="Password" id="password" required/>
+                    </div>
+                    Please check in below all that applies
+                    <p> Preferred location </p>
+                    <div class="location">
+                        <label for="city"> City </label>
+                        <input type="text" placeholder="City" id="Preferred_city">
+                    </div>
+
+                    <p> Preferred businesses </p>
+                    <div class="business_type">
+                        
+                        <label for="food"> Restaurant
+                            <input type="checkbox" value="yes" name="Restaurant" id="food">
+                            <span></span>
+                        </label>
+                        <label for="barber"> Barber Shop
+                            <input type="checkbox" value="yes" name="Barber Shop" id="barber">
+                            <span></span>
+                        </label>
+                        <label for="florist"> Florist
+                            <input type="checkbox" value="yes" name="Florist" id="florist">
+                            <span></span>
+                        </label>
+                        <label for="coffee"> Coffee Shops
+                            <input type="checkbox" value="yes" name="Coffee Shop" id="coffee">
+                            <span></span>
+                        </label>
+                        <label for="boutique"> Boutique
+                            <input type="checkbox" value="yes" name="Boutique" id="boutique">
+                            <span></span>
+                        </label>
+                        <label for="bike"> Bike
+                            <input type="checkbox" value="yes" name="Bike" id="bike">
+                            <span></span>
+                        </label>
+                    </div>
+
+                    <p> COVID comfortability </p>
+                    <div class="covid_comfy">
+                        <div>
+                            <label for="mask"> Mask
+                                <input type="checkbox" name="Dine" id="mask" value = "yes">
+                                <span></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class = "dine_in">
+                        <label for="dine"> Dine_In 
+                        <input type="checkbox" name="Dine" id="dine" value = "yes">
+                        <span></span>
+                    </label>
+                    </div>
+                    <div class = "delivery">
+                        <label for="delivery"> Delivery
+                        <input type="checkbox" name="Dine" id="delivery" value = "yes">
+                        <span></span>
+                    </label>
+                    </div>
+                    <div>
+                        <label for="take_out"> Take Out
+                        <select id = "take out">
+                            <option value="Curbside"> Curbside pick up </option>
+                            <option value="Pickup"> Returant pick up</option>
+                        </select>
+                        <span></span>
+                    </label>
+                      </div>
+                      </form>
+                      
+                      </div>
+
+
+                    <button class="btn purple z-depth-0" onclick="writeCusData()">Sign up</button>
+                </form>
+            </div>
+        </div>
+
         <!-- SIGN UP MODAL -->
         <!-- <credit to The Net Ninja></credit> -->
         <div id="modal-signup" class="modal">
@@ -120,11 +214,11 @@
                 <h4>Sign up</h4><br />
                 <form id="signup-form">
                     <div class="input-field">
-                        <input type="email" id="signup-email" required />
+                        <input type="email" id="signup-email" required>
                         <label for="signup-email">Email address</label>
                     </div>
                     <div class="input-field">
-                        <input type="password" id="signup-password" required />
+                        <input type="password" id="signup-password" required>
                         <label for="signup-password">Choose password</label>
                     </div>
                     <div>
@@ -152,7 +246,7 @@
 
                     <div>
                         <label> Business Type
-                            <select class="browser-defalut">
+                            <select class="browser-defalut" id = "Type">
                                 <option value="Restaurant"> Restaurant</option>
                                 <option value="Barber"> Barber</option>
                                 <option value="Bike"> Bike </option>
@@ -176,37 +270,48 @@
 
                     <div>
                         <progress value="0" max="100" id="uploader"> 0%</progress>
-                        <button class = "btn purple" onClick="uploadMenu()" id="submitMenu"> Confirm & Upload Menu </button>
+                        <button class="btn purple" onClick="uploadMenu()" id="submitMenu"> Confirm & Upload Menu
+                        </button>
                     </div>
-                    <div>
+                    
+               
 
-                            Please check your business status
+                        <p>Please check your business status</p>
+                        <div class = "food">
+
+                            <label for="cmask"> Mask
+                                <input type="checkbox" name="Dine" id="cmask" value = "Dine">
+                                <span> </span>
+                            </label>
+                        
+                            <label for="cdelivery"> Delivery
+                            <input type="checkbox" name="Dine" id="cdelivery" value = "yes">
+                            <span></span>
+                            </label>
+                    
+                    
+                            <label for="cdine"> Dine_In
+                                <input type="checkbox" name="Dine" id="cdine" value = "Dine">
+                                <span> </span>
+                            </label>
+
+  
+                      
+                           
+                        </div>
                         <div>
-                            <label for="mask" id ='check'> Require Mask 
-                            <input type="checkbox" name="Mask" id="mask" value="Mask">
+                            <label for="take_out"> Take Out 
+                            <select id = "take out">
+                                <option value="Curbside"> Curbside pick up </option>
+                                <option value="Pickup"> Returant pick up</option>
+                            </select>
                             <span></span>
                         </label>
                         </div>
-                        <div>
-                            <label for="dine"> Dine_In 
-                            <input type="checkbox" name="Dine" id="dine">
-                            <span></span>
-                        </label>
-                        </div>
-                        <div>
-                            <label for="delivery"> Delivery
-                            <input type="checkbox" name="Delivery" id="delivery" value="Delivery">
-                            <span>
-
-                            </span>
-                        </label>
-                        </div>
                     </div>
+                          
 
-
-
-
-                        <button class="btn purple z-depth-0" onclick= "writeData()">Sign up</button>
+                        <button class="btn purple z-depth-0" onclick="writeData()">Sign up</button>
                 </form>
             </div>
         </div>
@@ -409,9 +514,9 @@
             Email: document.getElementById("biz email").value,
             Number: document.getElementById("biz nums").value,
             Business_Type: document.getElementById("Type").value,
-            Mask_Required: document.getElementById("mask").checked,
-            Dine_In: document.getElementById('dine').checked,
-            Delivery_available: document.getElementById("delivery").checked
+            Mask_Required: "Mask Required " + document.getElementById("mask").checked,
+            Dine_In: "Dine In " + document.getElementById('dine').checked,
+            Delivery_available: "Delivery " + document.getElementById("delivery").checked
 
         })
             .then(function (docRef) {
@@ -423,7 +528,7 @@
 
 
 
-        //listen for file selection -> credit to firebase offical tutorial with firecast
+        bizSignUp();        
     }
     var uploadTracker = document.getElementById("uploader");
     var fileButton = document.getElementById("menu");
@@ -433,7 +538,7 @@
     var storageRef = null;
     // upload file
     var task = null;
-
+//listen for file selection -> credit to firebase offical tutorial with firecas
     fileButton.addEventListener('change', function (e) {
         file = e.target.files[0];
         storageRef = firebase.storage().ref('Menus/' + document.getElementById("Biz Name") + " " + "menu");
@@ -456,6 +561,74 @@
         );
     }
 
+
+</script>
+<script>
+    function writeCusData() {
+        db.collection("Customer").add({
+            City: document.getElementById("Preferred_city").value,
+
+            Mask_Required: document.getElementById("cmask").checked,
+            Dine_In: document.getElementById("cdine").checked,
+            Delivery_available: document.getElementById("cdelivery").checked,
+            Like_Food: document.getElementById("food").checked,
+            Like_Barber: document.getElementById("barber").checked,
+            Like_Florist: document.getElementById("florist").checked,
+            Like_Coffee: document.getElementById("coffee").checked,
+            Like_Boutique: document.getElementById("boutique").checked,
+            Like_Bike: document.getElementById("bike").checked,
+            Take_Out_Preference: document.getElementById("take out").value
+
+        })
+            .then(function (docRef) {
+                console.log("Document written with ID: ", docRef.id);
+            })
+            .catch(function (error) {
+                console.error("Error adding document: ", error);
+            });
+
+            cusSignUp()
+
+
+    }
+
+    const signupForm = document.querySelector('#signup-form');
+  //signupForm.addEventListener('submit', (e) => {
+    //e.preventDefault();
+
+  function bizSignUp(){
+        // get user info
+        const email = document.getElementById('signup-email').value;
+        const password = document.getElementById('signup-password').value;
+        
+        //sign up uset to auth
+        auth.createUserWithEmailAndPassword(email , password).then(cred =>{
+        
+          const modal = document.querySelector('#modal-signup');
+          M.Modal.getInstance(modal).close();
+          signupForm.reset();
+        });
+  }
+
+  const custForm = document.querySelector('#customerSignUp');
+  // custForm.addEventListener('submit', (e) => {
+  //   e.preventDefault();
+    // get user info
+    function cusSignUp(){
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      
+      //sign up uset to auth
+      auth.createUserWithEmailAndPassword(email, password).then(cred =>{
+      
+        const modal = document.querySelector('#modal-custSignUp');
+        M.Modal.getInstance(modal).close();
+        custForm.reset();
+      });
+    }
+  
+
+  //})
 
 </script>
 

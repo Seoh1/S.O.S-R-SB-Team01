@@ -4,7 +4,7 @@ const loggedIn = document.querySelectorAll('.logged-in');
 const setupUI = (user) =>{
     if(user){
         loggedIn.forEach(item => item.style.display = 'block');
-        loggedOut.forEach(item => item.style.display = 'block');
+        loggedOut.forEach(item => item.style.display = 'none');
     } else {
         loggedIn.forEach(item => item.style.display = 'none');
         loggedOut.forEach(item => item.style.display = 'block');
