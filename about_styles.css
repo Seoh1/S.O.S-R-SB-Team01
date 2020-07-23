@@ -1,0 +1,26 @@
+.photos {
+    /* display: block;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden; */
+    /* border-radius: 50%; */
+  }
+  
+  img {
+    /* width: auto;
+    height: 100%; */
+    /* margin-left: -50px; */
+    display: inline-block;
+    width:300px;
+  height:300px;
+  object-fit:cover;
+  border-radius:50%;
+  }
+
+
+.info-text{
+
+    box-sizing: border-box;
+    color: purple;
+}
