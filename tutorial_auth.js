@@ -10,6 +10,7 @@ var firebaseConfig = {
     measurementId: "G-LJZVEVE4BC"
 };
 // Initialize Firebase
+const auth = firebase.auth();
 firebase.initializeApp(firebaseConfig);
 // const db = firebase.firestore();
 
@@ -18,7 +19,7 @@ firebase.initializeApp(firebaseConfig);
 // firebase.analytics();
 
 
-const auth = firebase.auth();
+// const auth = firebase.auth();
 
 function signUp(){
     var email = document.getElementById("email");
@@ -48,6 +49,7 @@ function signOut(){
     auth.signout();
     alert("Signed Out");
 }
+
 
 auth.onAuthStateChanged(function(user){
     if(user){

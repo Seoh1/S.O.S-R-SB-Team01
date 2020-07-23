@@ -21,9 +21,13 @@
 
             <div class="right-side">
                 <div class="nav-link-wrapper active-nav-link">
-                    <a href="Login.html">Sign in</a>
+                    <a href="tutorial_auth.html">Sign in</a>
                 </div>
             </div>
+        </div>
+
+        <div class="login_page">
+            <!-- <script src="tutorial_aut.html"> -->
         </div>
 
 
@@ -32,77 +36,7 @@
     </div>
     <!-- here is the source: https://www.w3schools.com/howto/howto_js_popup_form.asp-->
     
-    <div class="pop-up-text">
-        <p><strong>If you already have an account, log in below:<strong></strong></p>
-
-    </div>
     
-        <button class="open-button" onclick="openForm()">Log in</button>
-
-        <div class="form-popup" id="myForm">
-        <form action="/action_page.php" class="form-container">
-            <h1>Login</h1>
-
-            <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Enter Email" name="email" required>
-
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
-
-            <button type="submit" class="btn">Login</button>
-            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-        </form>
-    </div>
-
-    <div class="alternative">
-        <h1> - OR - </h1>
-    </div>
-
-    <div class="new-business-text">
-        <p> <strong>Fill in the form below</strong></p>
-    </div>
-    
-    <div class="new-business">
-        
-        <form>
-            <div>
-                <label for = "Biz Name"> Business Name</label> <!-- label for refers to an input id, specified in input. This is to highlight the corresponding textbox-->
-                <input type = "text" name = "Business Name" id = 'Biz Name' placeholder="Business Name" required>
-            </div>
-            <div>
-                <label for = "L1"> Address Line 1 </label>
-                <input name = "Address Line 1" id = 'L1' placeholder="Busniess Address Line 1" required>
-            </div>
-            <div>
-                <label for = "L2"> Address Line 2 (optional) </label>
-                <input name = "Address Line 2" id = "L2" placeholder="Business Address Line 2">
-            </div>
-            <div>
-                <label for = "biz email"> Email </label>
-                <input type = "email" name = "Business Email" id = "biz email" required>
-        
-            </div>
-            <div>
-                <label for = "biz nums"> Business Number</label>
-                <input type = "number" name = "Business Number" id = "biz nums" required>
-            </div>
-            <div>
-                <label> Business Type 
-                    <select>
-                    <option value = "Food"> Resturant</option>
-                    <option value = "Barber"> Barber</option>
-                    <option value = "Bike"> Bike </option>
-                    <option value = "Boutique"> Boutique </option>
-                    <option value = "Coffee"> Coffee </option>
-                    <option value = "Florist"> Florist</option>
-    
-                    </select>
-                </label>
-            </div>
-            <button type = "submit"> Submit </button>
-        </form>
-    </div>
-
 
 </body>
 
