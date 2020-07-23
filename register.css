@@ -1,6 +1,6 @@
 .form-box, .submit-section{
     width: 380px;
-    height: 480px;
+    height: 720px;
     position: relative;
     margin: 6% auto;
     background: white;
@@ -9,7 +9,7 @@
     background-color: transparent;
 }
 
-.location, .covid_comfy, .dine_in, .delivery_options ,.submit-section, .business_type{
+.location, .covid_comfy, .dine_in, .delivery_options ,.submit-section, .business_type, .email-field, .pass-field{
     text-align: center;
     background-color: transparent;
 }
