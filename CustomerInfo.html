@@ -1,0 +1,46 @@
+<html>
+<head>
+  <title>Firebase Login</title>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="auth_styles.css" />
+  <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+  <!---<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js"></script>-->
+  <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-storage.js"></script>
+
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
+
+
+</head>
+<body>
+
+  
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyBRmNBPErjiQzclhKDNHC4DJ-NNTdZD6GU",
+        authDomain: "team-universal-database.firebaseapp.com",
+        databaseURL: "https://team-universal-database.firebaseio.com",
+        projectId: "team-universal-database",
+        storageBucket: "team-universal-database.appspot.com",
+        messagingSenderId: "359143047818",
+        appId: "1:359143047818:web:0db611886ddacafd6ba373",
+        measurementId: "G-LJZVEVE4BC"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    //const fileToUpload = document.getElementById("menu");
+    const db = firebase.firestore();
+
+
+
+    firebase.analytics();
+</script>
+    
+<script src = "CustomerDataCollect.js"></script>
+</body>
+</html>

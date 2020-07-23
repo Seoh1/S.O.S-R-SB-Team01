@@ -3,7 +3,7 @@
   <title>Firebase Login</title>
   <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="auth_styles.css" />
+  <!-- <link rel="stylesheet" href="auth_styles.css" /> -->
   <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
   <!---<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js"></script>-->
   <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-firestore.js"></script>
@@ -55,17 +55,17 @@
 
     <div class="business_type">
         <label for="type"> Restaurant </label>
-        <input type="checkbox" name="Restaurant" id="food">
+        <input type="checkbox" value = "yes" name="Restaurant" id="food">
         <label for="type"> Barber Shop </label>
-        <input type="checkbox" name="Barber Shop" id="barber">
+        <input type="checkbox" value = "yes"  name="Barber Shop" id="barber">
         <label for="type"> Florist </label>
-        <input type="checkbox" name="Florist" id="florist">
+        <input type="checkbox" value = "yes"  name="Florist" id="florist">
         <label for="type"> Coffee Shops </label>
-        <input type="checkbox" name="Coffee Shop" id="coffee">
+        <input type="checkbox" value = "yes" name="Coffee Shop" id="coffee">
         <label for="type"> Boutique </label>
-        <input type="checkbox" name="Boutique" id="boutique">
+        <input type="checkbox" value = "yes" name="Boutique" id="boutique">
         <label for="type"> Bike </label>
-        <input type="checkbox" name="Bike" id="bike">
+        <input type="checkbox" value = "yes" name="Bike" id="bike">
 
         
     </div>
@@ -73,26 +73,26 @@
     <div class="covid_comfy">
       <div>
         <label for="mask"> Require Mask </label>
-        <input type="checkbox" name="Mask" id="mask">
+        <input type="checkbox" value = "yes" name="Mask" id="mask">
       </div>
     </div>
 
     <div>
       <label for="dine"> Dine_In </label>
-      <input type="checkbox" name="Dine" id="dine" value = "Dine-In">
+      <input type="checkbox" name="Dine" id="dine" value = "yes">
   </div>
 
     <div class="delivery_options">
 
       <div>
         <label for="delivery"> Delivery </label>
-        <input type="checkbox" name="Delivery" id="delivery">
+        <input type="checkbox" value = "yes" name="Delivery" id="delivery">
     </div>
 
     <div>
       <label for="take_out"> Take Out </label>
       <select id = "take out">
-          <option value="Crubside"> Curbside pick up </option>
+          <option value="Curbside"> Curbside pick up </option>
           <option value="Pickup"> Returant pick up</option>
       </select>
     </div>
@@ -110,16 +110,16 @@
       db.collection("Customer").add({
         City: document.getElementById("Preferred_city").value,
         
-        Mask_Required: document.getElementById("mask").value,
-        Dine_In: document.getElementById("dine").value,
-        Delivery_available: document.getElementById("delivery").value,
-        Like_Food: document.getElementById("food").value,
-        Like_Barber: document.getElementById("barber").value,
-        Like_Florist: document.getElementById("florist").value,
-        Like_Coffee: document.getElementById("coffee").value,
-        Like_Boutique: document.getElementById("boutique").value,
-        Like_Bike: document.getElementById("bike").value,
-        Take_Out_Prefernece: document.getElementById("take out").value
+        Mask_Required: document.getElementById("mask").checked,
+        Dine_In: document.getElementById("dine").checked,
+        Delivery_available: document.getElementById("delivery").checked,
+        Like_Food: document.getElementById("food").checked,
+        Like_Barber: document.getElementById("barber").checked,
+        Like_Florist: document.getElementById("florist").checked,
+        Like_Coffee: document.getElementById("coffee").checked,
+        Like_Boutique: document.getElementById("boutique").checked,
+        Like_Bike: document.getElementById("bike").checked,
+        Take_Out_Preference: document.getElementById("take out").value
 
       })
         .then(function (docRef) {

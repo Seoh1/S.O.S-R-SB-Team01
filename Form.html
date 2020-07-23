@@ -105,7 +105,7 @@
                         </div>
                         <div>
                             <label for="dine"> Dine_In </label>
-                            <input type="checkbox" name="Dine" id="dine" value = "Dine-In">
+                            <input type="checkbox" name="Dine" id="dine">
                         </div>
                         <div>
                             <label for="delivery"> Delivery </label>
@@ -114,7 +114,7 @@
                         <div>
                             <label for="take out"> Take Out </label>
                             <select>
-                                <option value="Crubside"> Curbside pick up </option>
+                                <option value="Curbside"> Curbside pick up </option>
                                 <option value="Pickup"> Returant pick up</option>
                             </select>
                         </div>
@@ -141,9 +141,9 @@
                 Email: document.getElementById("biz email").value,
                 Number: document.getElementById("biz nums").value,
                 Business_Type: document.getElementById("Type").value,
-                Mask_Required: document.getElementById("mask").value,
-                Dine_In: document.getElementById("dine").value,
-                Delivery_available: document.getElementById("delivery").value
+                Mask_Required: document.getElementById("mask").checked,
+                Dine_In: document.getElementById('dine').checked,
+                Delivery_available: document.getElementById("delivery").checked
         
             })
                 .then(function (docRef) {
