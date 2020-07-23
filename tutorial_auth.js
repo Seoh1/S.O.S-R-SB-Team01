@@ -59,7 +59,7 @@ auth.onAuthStateChanged(function(user){
         alert("No Active user")
     }
 })
-
+ 
 
 // const user_prof = document.querySelector('#registered');
 // form.addEventListener('submit', (e) =>{
