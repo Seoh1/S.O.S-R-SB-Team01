@@ -1,0 +1,67 @@
+<html>
+<head>
+  <title>Firebase Login</title>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="auth_style.css" />
+</head>
+<body>
+
+<div  class="registered hide ">
+    <!-- <h3> Welcome to Shop Small</h3> -->
+    <h2> Please check in below all that applies</h2>
+    <p  id="user_profile_div">
+      
+    <p> Preferred location </p>
+    <div class="locatiion">
+      <label for="city"> City </label>
+      <input type="text" placeholder="City" id= "Preferred_city">
+
+    </div>
+
+    <div class="business_type">
+        <label for="type"> Restaurant </label>
+        <input type="checkbox" name="Restaurant" id="food">
+        <label for="type"> Barber Shop </label>
+        <input type="checkbox" name="Barber Shop" id="barber">
+        <label for="type"> Florist </label>
+        <input type="checkbox" name="Florist" id="florist">
+        <label for="type"> Coffee Shops </label>
+        <input type="checkbox" name="Coffee Shop" id="coffee">
+        <label for="type"> Boutique </label>
+        <input type="checkbox" name="Boutique" id="boutique">
+        <label for="type"> Bike </label>
+        <input type="checkbox" name="Bike" id="bike">
+
+    </div>
+
+    <div class="covid_comfy">
+      <div>
+        <label for="mask"> Require Mask </label>
+        <input type="checkbox" name="Mask" id="mask">
+      </div>
+    </div>
+
+    <div class="delivery_options">
+
+      <div>
+        <label for="delivery"> Delivery </label>
+        <input type="checkbox" name="Delivery" id="delivery">
+    </div>
+
+    <div>
+      <label for="take_out"> Take Out </label>
+      <select>
+          <option value="Crubside"> Curbside pick up </option>
+          <option value="Pickup"> Returant pick up</option>
+      </select>
+    </div>
+    </div>
+
+
+  </div>
+
+  <button onclick= "writeData()"> Submit Account </button>
+
+  </body>
+  </html>
