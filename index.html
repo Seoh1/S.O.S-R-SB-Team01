@@ -123,6 +123,57 @@
                         <input type="password" id="signup-password" required />
                         <label for="signup-password">Choose password</label>
                     </div>
+                    <div>
+                        <label for="Biz Name"> Business Name</label>
+                        <!-- label for refers to an input id, specified in input. This is to highlight the corresponding textbox-->
+                        <input type="text" name="BizName" id="Biz Name" placeholder="Business Name" required>
+                    </div>
+                    <div>
+                        <label for="L1"> Address Line 1 </label>
+                        <input name="L1" id="L1" placeholder="Busniess Address Line 1" required>
+                    </div>
+                    <div>
+                        <label for="L2"> Address Line 2 (optional) </label>
+                        <input name="L2" id="L2" placeholder="Business Address Line 2">
+                    </div>
+                    <div>
+                        <label for="biz email"> Business Email </label>
+                        <input type="email" name="Email" id="biz email" required>
+        
+                    </div>
+                    <div>
+                        <label for="biz nums"> Business Number</label>
+                        <input type="number" name="Number" id="biz nums" required>
+                    </div>
+
+                    <div>
+                        <label> Business Type
+                            <input type = 'radio' id="Type" 
+                                <option value="Restaurant"> Restaurant</option>
+                                <option value="Barber"> Barber</option>
+                                <option value="Bike"> Bike </option>
+                                <option value="Boutique"> Boutique </option>
+                                <option value="Coffee"> Coffee </option>
+                                <option value="Florist"> Florist</option>
+        
+                            </radio>
+                        </label>
+                    </div>
+                     <!-- added by Eliza from the source: https://www.w3schools.com/tags/att_input_accept.asp-->
+            <div class="uploading_menu">
+                <label> Add Menu (JPEG)
+                    <form action="/action_page.php">
+                        <label for="img">Select image:</label>
+                        <input type="file" id="menu" name="menu" accept=".JPEG">
+                    </form>
+                </label>
+                <!-- done by Eliza-->
+            </div>
+
+                    
+
+                    
+                    
                     <button class="btn purple z-depth-0">Sign up</button>
                 </form>
             </div>
