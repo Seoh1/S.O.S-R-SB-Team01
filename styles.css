@@ -41,7 +41,10 @@ body {
 }
 /* Set default styles for tab content */
 
-
+.right-side{
+    display: flex;
+    
+}
 .left-side {
     display: flex;
 

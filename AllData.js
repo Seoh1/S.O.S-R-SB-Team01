@@ -4,10 +4,10 @@ const bizForm = document.querySelector('#BizFormForm');
 
 
 //render data
-function renderData(doc){
+function renderData(doc) {
     let li = document.createElement('li');
-    let name = document.createElement('span', "\n");
-    let address = document.createElement('span', "\n");
+    let name = document.createElement('span');
+    let address = document.createElement('span');
     let email = document.createElement('span');
     let number = document.createElement('span');
     let bizType = document.createElement('span');
@@ -15,7 +15,7 @@ function renderData(doc){
     li.setAttribute('data-id', doc.id);
     name.textContent = doc.data().Name;
     //document.write("\n");
-    address.textContent = doc.data().Address; 
+    address.textContent = doc.data().Address;
     email.textContent = doc.data().Email;
     number.textContent = doc.data().Number;
     bizType = doc.data().Business_Type;
@@ -30,17 +30,16 @@ function renderData(doc){
 
     li.append(email);
 
-    //li.append("------------------------------");
 
     bizList.append(li);
 }
 
 //getting data
-function getCategoryData(BusinessType){
+function getCategoryData(BusinessType) {
     db.collection('Business').where("Business_Type", "==", BusinessType).get().then((snapshot) => {
         snapshot.docs.forEach(doc => {
             renderData(doc);
         })
-    });  
+    });
 }
 
