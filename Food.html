@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset = "utf-8" />
+    <meta charset="utf-8" />
     <title>About</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 
-     <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Input Form</title>
-            <link rel="stylesheet" href="styles.css">
-            <!-- The core Firebase JS SDK is always required and must be listed first -->
-            <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
-            <!---<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js"></script>-->
-            <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-firestore.js"></script>
-        
-        
-            <!-- TODO: Add SDKs for Firebase products that you want to use
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+    <!---<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js"></script>-->
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-firestore.js"></script>
+
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
                       https://firebase.google.com/docs/web/setup#available-libraries -->
-            <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
-        
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
+
 </head>
 <script>
     // Your web app's Firebase configuration
@@ -43,7 +44,7 @@
 </script>
 
 <body>
-    <style> 
+    <style>
         /* body {
           background-image: url("img_universal/food_back.jpg");
           background-color: #cccccc;
@@ -59,14 +60,14 @@
 
 
         } */
-            body { 
-             background: url(img_universal/food_back.jpg) no-repeat center center fixed; 
+        body {
+            background: url(img_universal/food_back.jpg) no-repeat center center fixed;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
-            background-size: cover;}
-
-        </style>
+            background-size: cover;
+        }
+    </style>
 
     <div class="container">
         <div class="nav-wrapper">
@@ -90,31 +91,34 @@
         </div> -->
 
 
-        
 
 
-        
-    
-        
-        <div class = "content">
-        
+
+
+
+
+        <div class="content">
+
             <form id="BizFormForm">
-            <ul id = "Biz-List"></ul>
+                <a href="BusinessSpecfic.html">
+                    <ul id="Biz-List"></ul>
+                </a>
             </form>
         </div>
         <div class="text_style">
 
-            <script src = "AllData.js"></script>"
+            <script src="AllData.js"></script>"
         </div>
-        </body>
-        
-        
-        </html>
-
-    </div>
-
-    <script>
-        getCategoryData("Restaurant");
-    </script>
 </body>
+
+
+</html>
+
+</div>
+
+<script>
+    getCategoryData("Restaurant");
+</script>
+</body>
+
 </html>

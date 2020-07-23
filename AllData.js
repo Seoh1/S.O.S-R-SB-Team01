@@ -21,10 +21,10 @@ function renderData(doc) {
     address.textContent = doc.data().Address;
     email.textContent = doc.data().Email;
     number.textContent = doc.data().Number;
-    bizType = doc.data().Business_Type;
-    maskReq = doc.data().Mask_Required;
-    dine = doc.data().Dine_In;
-    delivery = doc.data().Delivery_available;
+    bizType.textContent = doc.data().Business_Type;
+    maskReq.textContent = doc.data().Mask_Required;
+    dine.textContent = doc.data().Dine_In;
+    delivery.textContent = doc.data().Delivery_available;
 
 
 
