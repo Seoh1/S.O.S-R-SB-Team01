@@ -22,6 +22,35 @@
             margin-right: 3;
             text-align: center;
         }
+        
+        </style>
+        <style>
+            p1 {
+            color: purple;
+            text-indent: 40px;
+            text-transform: uppercase;
+            display: block;
+            margin-top: 1em;
+            /* border-radius: 4px; */
+            margin-bottom: 1em;
+            margin-left: 1;
+            margin-right: 3;
+            text-align: center;
+        }
+        </style>
+        <style>
+            p3 {
+            color: purple;
+            text-indent: 40px;
+            text-transform: uppercase;
+            display: block;
+            margin-top: 1em;
+            /* border-radius: 4px; */
+            margin-bottom: 1em;
+            margin-left: 1;
+            margin-right: 3;
+            text-align: center;
+        }
         </style>
 
 <style>
@@ -36,6 +65,13 @@
         margin-left: 1;
         margin-right: 3;
         text-align: center;
+    }
+    </style>
+
+<style>
+    .borderexample {
+     border-style:solid;
+     border-color:#287EC7;
     }
     </style>
 
@@ -77,17 +113,26 @@
     <h1> Here is our team</h1>
         <div class="team">
         <div class="photos">
-            <img src="img_universal/person.jpg">
-            <p> Here is member 1</p>
+            <div class="people">
+            <img src="img_universal/Rhys.JPG">
+            <div class="info-para">
+                <p1> Rhys</p1>
+                <p3 style="border:3px; border-style:solid; border-color:#FF0000; padding: 1em;">
+                    My name is Rhys Buckmaster and I'm a senior studying mechanical engineering technology at Purdue University. 
+                    Some of my hobbies include snowboarding, tennis, and crosswords</p3>
+            </div>
+            
+        </div>
+            
         </div>
 
         <div class="photos">
+            <div class="person">
             <img src="img_universal/person.jpg">
-            <div class="info-text">
                 <p> Here is member 1</p>
             </div>
         </div>
-        <div class="photos">
+        <!-- <div class="photos">
             <img src="img_universal/person.jpg">
             <p> Here is member 1</p>
         </div>
@@ -97,7 +142,7 @@
         </div>
         <div class="photos">
             <img src="img_universal/person.jpg">
-        </div>
+        </div> -->
     </div>
 </body>
 </html>
