@@ -43,7 +43,7 @@ body {
 
 .right-side{
     display: flex;
-    
+
 }
 .left-side {
     display: flex;
@@ -309,7 +309,7 @@ li{ /*To create a block of shade around data */
     position: relative;
     /* border-bottom: 1px solid #e6e6e6; */
     height: 140px;
-    width: 160px;
+    width: 200px;
     float: left;
     width: 20%;
 
@@ -323,6 +323,7 @@ li:nth-child(1){
 li span{ /*span meaning: name, address, etc*/
     display: block; /*this helps the data to stay as a block*/
     color: white;
+    position: relative;
 }
 
 li span:nth-child(1){

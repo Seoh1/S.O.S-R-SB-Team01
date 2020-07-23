@@ -101,11 +101,15 @@
                         </h1>
                         <div>
                             <label for="mask"> Require Mask </label>
-                            <input type="checkbox" name="Mask" id="mask">
+                            <input type="checkbox" name="Mask" id="mask" value = "Mask">
+                        </div>
+                        <div>
+                            <label for="dine"> Dine_In </label>
+                            <input type="checkbox" name="Dine" id="dine" value = "Dine-In">
                         </div>
                         <div>
                             <label for="delivery"> Delivery </label>
-                            <input type="checkbox" name="Delivery" id="delivery">
+                            <input type="checkbox" name="Delivery" id="delivery" value = "Delivery">
                         </div>
                         <div>
                             <label for="take out"> Take Out </label>
@@ -116,10 +120,11 @@
                         </div>
 
                         <div class="button_click">
-                            <button type="reset"> Reset </button></div>
+                            <button type="reset"> Reset </button>
+                            <button onclick="writeData()"> Submit </button>
                     </div>
 
-                    <button onclick="writeData()"> Submit </button>
+                    <!-- <button onclick="writeData()"> Submit </button> -->
             </div>
 
     </form>
@@ -137,11 +142,9 @@
                 Number: document.getElementById("biz nums").value,
                 Business_Type: document.getElementById("Type").value,
                 Mask_Required: document.getElementById("mask").value,
+                Dine_In: document.getElementById("dine").value,
                 Delivery_available: document.getElementById("delivery").value
-                //Menu: document.getElementById("menu").value
-
-
-
+        
             })
                 .then(function (docRef) {
                     console.log("Document written with ID: ", docRef.id);

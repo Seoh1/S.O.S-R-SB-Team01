@@ -3,9 +3,43 @@
   <title>Firebase Login</title>
   <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="auth_style.css" />
+  <link rel="stylesheet" href="auth_styles.css" />
+  <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+  <!---<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js"></script>-->
+  <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-storage.js"></script>
+
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
+
+
 </head>
 <body>
+
+  
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyBRmNBPErjiQzclhKDNHC4DJ-NNTdZD6GU",
+        authDomain: "team-universal-database.firebaseapp.com",
+        databaseURL: "https://team-universal-database.firebaseio.com",
+        projectId: "team-universal-database",
+        storageBucket: "team-universal-database.appspot.com",
+        messagingSenderId: "359143047818",
+        appId: "1:359143047818:web:0db611886ddacafd6ba373",
+        measurementId: "G-LJZVEVE4BC"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    //const fileToUpload = document.getElementById("menu");
+    const db = firebase.firestore();
+
+
+
+    firebase.analytics();
+</script>
 
 <div  class="registered">
     <!-- <h3> Welcome to Shop Small</h3> -->
@@ -43,6 +77,11 @@
       </div>
     </div>
 
+    <div>
+      <label for="dine"> Dine_In </label>
+      <input type="checkbox" name="Dine" id="dine" value = "Dine-In">
+  </div>
+
     <div class="delivery_options">
 
       <div>
@@ -52,7 +91,7 @@
 
     <div>
       <label for="take_out"> Take Out </label>
-      <select>
+      <select id = "take out">
           <option value="Crubside"> Curbside pick up </option>
           <option value="Pickup"> Returant pick up</option>
       </select>
@@ -64,5 +103,35 @@
 
   <button onclick= "writeData()"> Submit Account </button>
 
+
+
+  <script>
+    function writeData() {
+      db.collection("Customer").add({
+        City: document.getElementById("Preferred_city").value,
+        
+        Mask_Required: document.getElementById("mask").value,
+        Dine_In: document.getElementById("dine").value,
+        Delivery_available: document.getElementById("delivery").value,
+        Like_Food: document.getElementById("food").value,
+        Like_Barber: document.getElementById("barber").value,
+        Like_Florist: document.getElementById("florist").value,
+        Like_Coffee: document.getElementById("coffee").value,
+        Like_Boutique: document.getElementById("boutique").value,
+        Like_Bike: document.getElementById("bike").value,
+        Take_Out_Prefernece: document.getElementById("take out").value
+
+      })
+        .then(function (docRef) {
+          console.log("Document written with ID: ", docRef.id);
+        })
+        .catch(function (error) {
+          console.error("Error adding document: ", error);
+        });
+
+
+    }
+
+  </script>
   </body>
   </html>
