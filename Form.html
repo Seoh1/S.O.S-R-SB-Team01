@@ -165,7 +165,7 @@
 
         fileButton.addEventListener('change', function (e) {
             file =  e.target.files[0];
-            storageRef = firebase.storage().ref('folder_name/' + file.name);
+            storageRef = firebase.storage().ref('Menus/' + document.getElementById("Biz Name") + " " + "menu");
             
         });
         function uploadMenu(){
