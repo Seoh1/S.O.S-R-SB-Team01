@@ -1,30 +1,76 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset = "utf-8" />
-        <title>
-            Web for R&SB team-01
-         </title>
 
-        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="styles.css">
+<head>
+    <meta charset="utf-8" />
+    <title>
+        Web for R&SB team-01
+    </title>
 
-        
-    </head>
-    <body>
-        
-        <div class="container">
-            <div class="nav-wrapper">
-                
-                <div class="left-side">
-                    <div class="nav-link-wrapper active-nav-link">
-                        <a href="index.html">Home</a>
+    
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+    
+    <!---<script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-database.js"></script>-->
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-firestore.js"></script>
+
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+              https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBRmNBPErjiQzclhKDNHC4DJ-NNTdZD6GU",
+            authDomain: "team-universal-database.firebaseapp.com",
+            databaseURL: "https://team-universal-database.firebaseio.com",
+            projectId: "team-universal-database",
+            storageBucket: "team-universal-database.appspot.com",
+            messagingSenderId: "359143047818",
+            appId: "1:359143047818:web:0db611886ddacafd6ba373",
+            measurementId: "G-LJZVEVE4BC"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        const auth = firebase.auth();
+
+        firebase.analytics();
+    </script>
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="nav-wrapper">
+
+            <div class="left-side">
+                <div class="nav-link-wrapper active-nav-link">
+                    <div class="logged-out">
+                    <a href="index.html">Home</a>
                     </div>
-                    <div class="nav-link-wrapper active-nav-link">
+                </div>
+                <div class="nav-link-wrapper active-nav-link">
+                    <div class="logged-out">
                         <a href="about.html">About</a>
                     </div>
                 </div>
+            </div>
 
+<<<<<<< HEAD
                 <div class="right-side">
                     <div class="nav-link-wrapper active-nav-link">
                         <a href="tutorial_auth.html">Log in</a>
@@ -32,161 +78,234 @@
                     <!-- <div class="nav-link-wrapper active-nav-link">
                         <a href="Signin.html"> Sign in</a>
                     </div> -->
+=======
+            <div class="right-side">
+                <div class="nav-link-wrapper active-nav-link">
+                    <div class="logged-in">
+                        <a href="#" class="grey-text modal-trigger" id = "logout">Log out</a>
+                    </div>
                 </div>
-            </div>
-
-            <div class="welcome-text">
-                <h1>Welcome to Shop Small</h1>
-            </div>
-            
-
-
-            <div class="category-search">
-                <p1>What are you looking for?</p1>
-            </div>
-
-        </div>
-
-        <div class="content-wrapper">
-            <div class="biz-categories">
-
-
-                <div class="biz-category">
-                    <div class = "img-background" style = "background-image:url(img_universal/restaurant.jpg)">
-                        
+                <div class="nav-link-wrapper active-nav-link">
+                    <div class="logged-out">
+                        <a href="#" class="grey-text modal-trigger" data-target = "modal-login">Log in</a>
                     </div>
-
-                    <div class="img-text-wrapper">
-                        <div class="centered">
-                            <div class="biz-link-wrapper active-nav-link">
-                                <a href="Food.html"><h1>Restaurants/Food</h1></a>
-                            </div>
-                            
-                        
-                        </div>
-
-                        <div class="subtitle">
-                            Order, buy & eat out at local small restaurants
-                        </div>
-                    </div>
-
-
-
                 </div>
-                <div class="biz-category">
-                    <div class = "img-background" style = "background-image:url(img_universal/florist.jpg)">
+                <div class="nav-link-wrapper active-nav-link">
+                    <div class="logged-out">
+                        <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
                     </div>
-
-                    <div class="img-text-wrapper">
-                        <div class="centered">
-                            <div class="biz-link-wrapper active-nav-link">
-                                <a href="Florist.html"><h1>Florist shops</h1></a>
-                            </div>
-                        
-                        </div>
-
-                        <div class="subtitle">
-                            Buy your loved ones a beautiful bouquet 
-                        </div>
-                    </div>
-
-
-
+>>>>>>> 731025886681822690c166f185ceed94684f27e6
                 </div>
-                <div class="biz-category">
-                    <div class = "img-background" style = "background-image:url(img_universal/coffee.jpg)">
-                    </div>
-
-                    <div class="img-text-wrapper">
-                        <div class="centered">
-                            <div class="biz-link-wrapper active-nav-link">
-                                <a href="Coffee.html"><h1>Coffee shops</h1>></a>
-                            </div>
-                        
-                        </div>
-
-                        <div class="subtitle">
-                            Enjoy Indy coffee brewed and sold by locals 
-                        </div>
-                    </div>
-
-
-
-                </div>
-                <div class="biz-category">
-                    <div class = "img-background" style = "background-image:url(img_universal/boutique.jpg)">
-                    </div>
-
-                    <div class="img-text-wrapper">
-                        <div class="centered">
-                            <div class="biz-link-wrapper active-nav-link">
-                                <a href="Boutique.html"><h1>Boutiques</h1></a>
-                            </div>
-                        
-                        </div>
-
-                        <div class="subtitle">
-                            Shop from locally owned boutiques
-                        </div>
-                    </div>
-
-
-
-                </div>
-
-                
-                <div class="biz-category">
-                    <div class = "img-background" style = "background-image:url(img_universal/barber.jpg)">
-                    </div>
-
-                    <div class="img-text-wrapper">
-                        <div class="centered">
-                            <div class="biz-link-wrapper active-nav-link">
-                                <a href="Barber.html"><h1>Barber shops</h1></a>
-                            </div>
-                        
-                        </div>
-
-                        <div class="subtitle">
-                            Give yourself a fresh look at the barber shop
-                        </div>
-                    </div>
-
-
-
-                </div>
-
-                <div class="biz-category">
-                    <div class = "img-background" style = "background-image:url(img_universal/bike_shop.jpg)">
-                    </div>
-
-                    <div class="img-text-wrapper">
-                        <div class="centered">
-                            <div class="biz-link-wrapper active-nav-link">
-                                <a href="Bike.html"><h1>Bicycle shops</h1></a>
-                            </div>
-                        
-                        </div>
-
-                        <div class="subtitle">
-                            Buy or repair your bike here!
-                        </div>
-                    </div>
-
-
-
-                </div>
-
-
 
             </div>
         </div>
 
-    </body>
+        <!-- LOGIN MODAL -->
+        <!-- Credit to The Net Ninjia, tutorial in https://github.com/iamshaunjp/firebase-auth -->
+        <div id="modal-login" class="modal">
+            <div class="modal-content">
+                <h4>Login</h4><br />
+                <form id="login-form">
+                    <div class="input-field">
+                        <input type="email" id="login-email" required />
+                        <label for="login-email">Email address</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="login-password" required />
+                        <label for="login-password">Your password</label>
+                    </div>
+                    <button class="btn purple z-depth-0">Login</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- SIGN UP MODAL -->
+        <!-- <credit to The Net Ninja></credit> -->
+        <div id="modal-signup" class="modal">
+            <div class="modal-content">
+                <h4>Sign up</h4><br />
+                <form id="signup-form">
+                    <div class="input-field">
+                        <input type="email" id="signup-email" required />
+                        <label for="signup-email">Email address</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="signup-password" required />
+                        <label for="signup-password">Choose password</label>
+                    </div>
+                    <button class="btn purple z-depth-0">Sign up</button>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="welcome-text">
+            <h1>Welcome to Shop Small</h1>
+        </div>
+
+
+
+        <div class="category-search">
+            <p1>What are you looking for?</p1>
+        </div>
+
+    </div>
+
+    <div class="content-wrapper">
+        <div class="biz-categories">
+
+
+            <div class="biz-category">
+                <div class="img-background" style="background-image:url(img_universal/restaurant.jpg)">
+
+                </div>
+
+                <div class="img-text-wrapper">
+                    <div class="centered">
+                        <div class="biz-link-wrapper active-nav-link">
+                            <a href="Food.html">
+                                <h1>Restaurants/Food</h1>
+                            </a>
+                        </div>
+
+
+                    </div>
+
+                    <div class="subtitle">
+                        Order, buy & eat out at local small restaurants
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="biz-category">
+                <div class="img-background" style="background-image:url(img_universal/florist.jpg)">
+                </div>
+
+                <div class="img-text-wrapper">
+                    <div class="centered">
+                        <div class="biz-link-wrapper active-nav-link">
+                            <a href="Florist.html">
+                                <h1>Florist shops</h1>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="subtitle">
+                        Buy your loved ones a beautiful bouquet
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="biz-category">
+                <div class="img-background" style="background-image:url(img_universal/coffee.jpg)">
+                </div>
+
+                <div class="img-text-wrapper">
+                    <div class="centered">
+                        <div class="biz-link-wrapper active-nav-link">
+                            <a href="Coffee.html">
+                                <h1>Coffee shops</h1>>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="subtitle">
+                        Enjoy Indy coffee brewed and sold by locals
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="biz-category">
+                <div class="img-background" style="background-image:url(img_universal/boutique.jpg)">
+                </div>
+
+                <div class="img-text-wrapper">
+                    <div class="centered">
+                        <div class="biz-link-wrapper active-nav-link">
+                            <a href="Boutique.html">
+                                <h1>Boutiques</h1>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="subtitle">
+                        Shop from locally owned boutiques
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+            <div class="biz-category">
+                <div class="img-background" style="background-image:url(img_universal/barber.jpg)">
+                </div>
+
+                <div class="img-text-wrapper">
+                    <div class="centered">
+                        <div class="biz-link-wrapper active-nav-link">
+                            <a href="Barber.html">
+                                <h1>Barber shops</h1>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="subtitle">
+                        Give yourself a fresh look at the barber shop
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <div class="biz-category">
+                <div class="img-background" style="background-image:url(img_universal/bike_shop.jpg)">
+                </div>
+
+                <div class="img-text-wrapper">
+                    <div class="centered">
+                        <div class="biz-link-wrapper active-nav-link">
+                            <a href="Bike.html">
+                                <h1>Bicycle shops</h1>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="subtitle">
+                        Buy or repair your bike here!
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="index.js"></script>
+    <script src="auth_index.js"></script>
+
+</body>
 
 <!-- this sctipt of JS is for darkenign when hover is on the selected category  -->
 
-    <script>
+<script>
     const bizItems = document.querySelectorAll('.biz-category')
 
     bizItems.forEach(bizItem => {
@@ -201,7 +320,7 @@
     })
 
 
-</script>
+</script
 
 <!-- this sctipt of JS is for printing out all the restaurants  -->
 <!-- this is the end of the script for printing available restaurants ---Not working!!!!!-->
