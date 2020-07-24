@@ -109,7 +109,7 @@
                         <input type="password" id="login-password" required />
                         <label for="login-password">Your password</label>
                     </div>
-                    <button class="btn purple z-depth-0">Login</button>
+                    <button class="btn purple z-depth-0" id="myButton">Login</button>
                 </form>
             </div>
         </div>
@@ -481,6 +481,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="index.js"></script>
     <script src="auth_index.js"></script>
+
+
+    <script type="text/javascript">
+        document.getElementById("myButton").onclick = function () {
+            window.location.href = "user_prof.html";
+        };
+    </script>
+
+
 
 </body>
 
