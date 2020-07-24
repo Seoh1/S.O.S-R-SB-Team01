@@ -1,0 +1,3 @@
+Below are the list of all the sources and tutorials that we have used to built this project:
+
+https://www.w3schools.com/howto/howto_css_team.asp

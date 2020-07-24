@@ -1,44 +1,68 @@
-.photos {
-    /* display: block;
-    position: relative;
-    width: 200px;
-    height: 200px;
-    overflow: hidden;
-    border-radius: 50%;  */
-    /* vertical-align: top; */
-  }
-  .person{
-      text-align: left;
-  }
+
   
   img {
-    width: auto;
+    /* width: auto;
     height: 100%;
     margin-left: -50px;
     display: block;
     width:300px;
   height:300px;
-  object-fit:cover;
+  object-fit:cover; */
   border-radius:50%;
+  /* width:400px;
+  height:250px; */
   }
 
 
-.info-text{
 
-    box-sizing: border-box;
-    color: purple;
-}
-
-.div1 {
-    border: 3px solid #0f0;
-    overflow:auto; // without overflow here, if the "Line 1" and "Line 2" is short then "Next elements" will display below "Line 2" and the image will cover the "Next elements" 
-}
-.img {
+ .photos{
    float: left;
-   width:100px;
-   height:100px;
-   background: #000 
+   width: 18%;
+   margin-bottom: 16px;
+   padding: 3px 8px;
+   margin-left: 7px;
+
+ }
+
+
+ @media screen and (max-width: 650px) {
+   .photos{
+     width: 100%;
+     display: block;
+   }
+ }
+ .info-para{
+   padding: 0 16px;
+   text-align: center;
+ }
+
+ .info-para h4{
+   
+ }
+
+ .info-para::after .team::after{
+   content: "";
+   clear: both;
+   display: table;
+
+ }
+
+ .title{
+   color: purple;
+ }
+
+.What-is{
+  text-align: center;
 }
-.div2 {
-   float: left; // without float here, if "Line 1" and "Line 2" is long -> text will display both at right and bottom the image
-} 
+.statement{
+  text-align: center;
+  
+}
+
+.statement p2{
+  font-weight: bolder;
+}
+.meet-the-team h1{
+  text-align: center;
+
+}
