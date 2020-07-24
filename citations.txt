@@ -2,10 +2,10 @@ Below are the list of all the sources and tutorials that we have used to built t
 
 https://www.w3schools.com/howto/howto_css_team.asp
 
-The Net Ninja: Firestore tutorial
+The Net Ninja: Firestore tutorial Series
 https://www.youtube.com/watch?v=4d-gIPGzmK4&list=PL4cUxeGkcC9itfjle0ji1xOZ2cjRGY_WB
 
-The Net Ninja: Firebase Authentication tutorial
+The Net Ninja: Firebase Authentication tutorial Series
 https://www.youtube.com/watch?v=aN1LnNq4z54&list=PL4cUxeGkcC9jUPIes_B8vRjn1_GaplOPQ
 
 Web Dev Simplifed: Learn HTML Forms in 25 minutes
