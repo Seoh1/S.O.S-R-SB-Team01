@@ -3,7 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <title>User Profile</title>
+
         <link rel="stylesheet" href="user_profile_styles.css">
+        <link rel = "stylesheet" href = "styles.css">
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
 
         
@@ -11,6 +13,47 @@
 
 
     <body>
+        <div class="container">
+            <div class="nav-wrapper">
+    
+                <div class="left-side">
+                    <div class="nav-link-wrapper active-nav-link">
+            
+                            <a href="index.html">Home</a>
+                  
+                    </div>
+                    <div class="nav-link-wrapper active-nav-link">
+                 
+                            <a href="about.html">About</a>
+               
+                    </div>
+                </div>
+    
+                <div class="right-side">
+                    <div class="nav-link-wrapper active-nav-link">
+                        <div class="logged-in">
+                            <a href="#" class="grey-text modal-trigger" id="logout">Log out</a>
+                        </div>
+                    </div>
+                    <div class="nav-link-wrapper active-nav-link">
+                        <div class="logged-out">
+                            <a href="#" class="grey-text modal-trigger" data-target="modal-login">Log in</a>
+                        </div>
+                    </div>
+                    <div class="nav-link-wrapper active-nav-link">
+                        <div class="logged-out">
+                            <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Business Sign Up</a>
+                        </div>
+                    </div>
+                    <div class="nav-link-wrapper active-nav-link">
+                        <div class="logged-out">
+                            <!-- <a href = "register.html">Customer Sign Up</a> -->
+                            <a href="#" class="grey-text modal-trigger" data-target="modal-custSignUp">Customer Sign Up</a>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
 
         <div class="wrapper">
             <div class="left">

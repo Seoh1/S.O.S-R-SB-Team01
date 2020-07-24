@@ -1,4 +1,4 @@
-// parts of this code is in reference to The Net Ninja's firebase authentication tutorial
+// This code is in reference to The Net Ninja's firebase authentication tutorial
 // tutorial link: https://www.youtube.com/watch?v=wkdCpktUfGg&list=PL4cUxeGkcC9jUPIes_B8vRjn1_GaplOPQ&index=5
 // github link: https://github.com/iamshaunjp/firebase-auth
 
@@ -89,9 +89,17 @@ firebase.auth().onAuthStateChanged(function(user) {
 
     auth.signInWithEmailAndPassword(userEmail, userPassword).then(cred =>{
 
+      if(email == "eliza-n99@yandex.ru" && password == "12345678910"){
+        document.location.href = "user_profile.html"
+      } else {
+        document.location.href = " ";
+
+      }
+
       const modal = document.querySelector('#modal-login');
       M.Modal.getInstance(modal).close();
       loginForm.reset();
+      
 
     })
 
