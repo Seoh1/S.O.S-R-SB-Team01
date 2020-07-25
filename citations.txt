@@ -20,3 +20,16 @@ https://firebase.google.com/
 NOOBS for Raspberry Pi: NOOBS is an alternative straightforward way to install an operating system
 https://www.raspberrypi.org/downloads/noobs/
 
+customer prfile created with the following tutorial:
+https://www.youtube.com/watch?v=pMBgvktESDM
+
+Firestore bits were made according thissource:
+https://www.youtube.com/watch?v=7lEU1UEw3YI
+
+The front page of the website as well as nav bars were made with the following tutorial:
+https://www.youtube.com/watch?v=5bMdjkfvONE&t=3168s
+
+
+Authentication on Firestore was made with the help of the following tutorials:
+https://www.youtube.com/watch?v=cb8H_hp10rc
+https://www.youtube.com/watch?v=CvkCjfHts9A&t=266s
