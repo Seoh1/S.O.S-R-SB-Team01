@@ -11,3 +11,12 @@ https://www.youtube.com/watch?v=aN1LnNq4z54&list=PL4cUxeGkcC9jUPIes_B8vRjn1_Gapl
 Web Dev Simplifed: Learn HTML Forms in 25 minutes
 https://www.youtube.com/watch?v=fNcJuPIZ2WE
 
+PyPi: The Python Package Index
+https://pypi.org/
+
+FireBase: Firebase helps mobile and web app teams succeed
+https://firebase.google.com/
+
+NOOBS for Raspberry Pi: NOOBS is an alternative straightforward way to install an operating system
+https://www.raspberrypi.org/downloads/noobs/
+
